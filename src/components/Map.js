@@ -46,7 +46,6 @@ class Map extends Component {
 
     return (
       <div>
-        <h1>Map</h1>
         <div id='map'></div>
         <a href="https://blog.mapbox.com/designing-north-star-c8574e299c94">Design North Star</a>
       </div>
