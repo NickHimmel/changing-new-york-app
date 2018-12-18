@@ -1,0 +1,8 @@
+.mapboxgl-popup-close-button {
+  display: none;
+}
+
+#map {
+  height: 600px;
+  margin: 85px 0 15px 0;
+}

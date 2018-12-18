@@ -15,6 +15,30 @@ class Map extends Component {
         zoom: 13.6,
     });
 
+    var popup = new window.mapboxgl.Popup({ offset: [0, -15] })
+
+    map.on('mousemove', function(e) {
+
+      map.getCanvas().style.cursor = 'pointer';
+
+      const features = map.queryRenderedFeatures(e.point, {
+        layers: ['the-new-york-waterfront']
+      });
+
+      if (!features.length) {
+        popup.remove();
+        return;
+      }
+
+      const feature = features[0];
+
+      popup.setLngLat(feature.geometry.coordinates)
+        .setHTML('<h3>' + feature.properties.UUID + '</h3>' + '<p>' + feature.properties.title + '</p>')
+        .setLngLat(feature.geometry.coordinates)
+        .addTo(map)
+
+    });
+
   }
 
   render() {
