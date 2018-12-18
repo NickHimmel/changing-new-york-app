@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Map from './components/Map.js'
 import Photo from './components/Photo.js'
+import Comparison from './components/Comparison.js'
 
 require('dotenv').config();
 
@@ -21,8 +22,9 @@ class App extends Component {
     return (
       <div>
         <h1>{this.state.uuid}</h1>
-      <Map onClick={this.handleClick}/>
-      <Photo />
+        <Map onClick={this.handleClick}/>
+        <Photo />
+        <Comparison /> 
       </div>
     );
   }
