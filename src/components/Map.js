@@ -7,7 +7,7 @@ class Map extends Component {
     const mapContainer = document.getElementById('map');
     const MAPBOXGL = window.mapboxgl;
 
-    MAPBOXGL.accessToken = 'pk.eyJ1Ijoibmlja2hpbW1lbCIsImEiOiJjajVvOHEwczIzbzFxMnFvNmgzYTlxcDNtIn0.so7Fl2IB0NepmcmrnpvC3Q';
+    MAPBOXGL.accessToken = process.env.REACT_APP_MAPBOX_API_KEY;
 
     const map = new MAPBOXGL.Map({
         container: mapContainer,
