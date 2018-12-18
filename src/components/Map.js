@@ -5,17 +5,18 @@ class Map extends Component {
   componentDidMount() {
 
     const mapContainer = document.getElementById('map');
+    const MAPBOXGL = window.mapboxgl;
 
-    window.mapboxgl.accessToken = 'pk.eyJ1Ijoibmlja2hpbW1lbCIsImEiOiJjajVvOHEwczIzbzFxMnFvNmgzYTlxcDNtIn0.so7Fl2IB0NepmcmrnpvC3Q';
+    MAPBOXGL.accessToken = 'pk.eyJ1Ijoibmlja2hpbW1lbCIsImEiOiJjajVvOHEwczIzbzFxMnFvNmgzYTlxcDNtIn0.so7Fl2IB0NepmcmrnpvC3Q';
 
-    const map = new window.mapboxgl.Map({
+    const map = new MAPBOXGL.Map({
         container: mapContainer,
         style: 'mapbox://styles/nickhimmel/cjdqhpjto1hev2sn5lxumgusz',
         center: [-73.9970, 40.705],
         zoom: 13.6,
     });
 
-    var popup = new window.mapboxgl.Popup({ offset: [0, -15] })
+    var popup = new MAPBOXGL.Popup({ offset: [0, -15] })
 
     map.on('mousemove', function(e) {
 
@@ -33,7 +34,7 @@ class Map extends Component {
       const feature = features[0];
 
       popup.setLngLat(feature.geometry.coordinates)
-        .setHTML('<h3>' + feature.properties.UUID + '</h3>' + '<p>' + feature.properties.title + '</p>')
+        .setHTML('<h3>' + feature.properties.UUID + '</h3> <p>' + feature.properties.title + '</p>')
         .setLngLat(feature.geometry.coordinates)
         .addTo(map)
 
