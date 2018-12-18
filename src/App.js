@@ -9,11 +9,17 @@ class App extends Component {
     this.state = {uuid: ''};
   }
 
+  handleClick = (uuid) => {
+    this.setState({
+      uuid: uuid
+    });
+  }
+
   render() {
     return (
       <div>
         <h1>{this.state.uuid}</h1>
-        <Map />
+      <Map onClick={this.handleClick}/>
       </div>
     );
   }

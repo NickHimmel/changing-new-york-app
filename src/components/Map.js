@@ -4,6 +4,10 @@ class Map extends Component {
 
   componentDidMount() {
 
+    const onMapClick = (uuid) => {
+          this.props.onClick(uuid)
+    }
+    
     const mapContainer = document.getElementById('map');
     const MAPBOXGL = window.mapboxgl;
 
@@ -40,6 +44,14 @@ class Map extends Component {
 
     });
 
+    map.on('click', function(e) {
+        const features = map.queryRenderedFeatures(e.point, {
+          layers: ['the-new-york-waterfront']
+        });
+
+        const feature = features[0];
+        onMapClick(feature.properties.UUID)
+    })
   }
 
   render() {
