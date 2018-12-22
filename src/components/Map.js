@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
-
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import { getUuid } from '../actions/actions.js'
 class Map extends Component {
 
   componentDidMount() {
 
     const onMapClick = (uuid) => {
-          this.props.onClick(uuid)
+          this.props.getUuid(uuid)
     }
-    
+
     const mapContainer = document.getElementById('map');
     const MAPBOXGL = window.mapboxgl;
 
@@ -55,7 +57,6 @@ class Map extends Component {
   }
 
   render() {
-
     return (
       <div>
         <div id='map'></div>
@@ -65,4 +66,20 @@ class Map extends Component {
   }
 }
 
-export default Map;
+const mapStateToProps = (state) => {
+  return {
+    uuid: state.uuid
+  };
+};
+
+const mapDispatchToProps = dispatch => bindActionCreators (
+  {
+    getUuid
+  },
+  dispatch,
+)
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Map);

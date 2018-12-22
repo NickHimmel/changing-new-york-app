@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
-import { infoReducer } from './infoReducer'
+import { photoReducer } from './photoReducer'
 
 export default combineReducers({
-  info: infoReducer
+  photo: photoReducer
 })
