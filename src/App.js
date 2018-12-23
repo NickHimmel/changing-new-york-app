@@ -7,11 +7,6 @@ import Comparison from './components/Comparison.js'
 require('dotenv').config();
 
 class App extends Component {
-  constructor(props) {
-    super(props)
-    
-  }
-
   render() {
     return (
       <div>
