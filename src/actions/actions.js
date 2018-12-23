@@ -8,7 +8,7 @@ export const startFetchPhotos = () => {
 
 export const completeFetchPhotos = (photos) => {
   return {
-    type: 'COMPLETE_FETCH_PHOTO',
+    type: 'COMPLETE_FETCH_PHOTOS',
     photos
   };
 };
@@ -16,10 +16,9 @@ export const completeFetchPhotos = (photos) => {
 export const fetchPhotos = (uuid) => {
   return (dispatch, getState) => {
     dispatch(startFetchPhotos());
-    console.log(uuid)
     axios.get(`https://changing-new-york-api.herokuapp.com/photos/${uuid}`)
       .then(responce => {
-        dispatch(completeFetchPhotos(responce))
+        dispatch(completeFetchPhotos(responce.data))
       })
       .catch(error => {
         throw(error)

@@ -1,10 +1,11 @@
 export const photoReducer = (state = [], action) => {
   switch (action.type) {
-    case 'START_INFO_FETCH':
+    case 'START_FETCH_PHOTOS':
       return {
         isFetching: true
       };
-    case 'COMPLETE_INFO_FETCH':
+    case 'COMPLETE_FETCH_PHOTOS':
+    console.log(action)
       return {
         isFetching: false,
         photos: action.photos

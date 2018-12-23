@@ -7,7 +7,6 @@ class Map extends Component {
   componentDidMount() {
 
     const handleClick = (uuid) => {
-      console.log(uuid);
       this.props.fetchPhotos(uuid);
     }
 
@@ -73,6 +72,7 @@ class Map extends Component {
 
 const mapStateToProps = (state) => {
   return {
+    isFetching: state.isFetching,
     photos: state.photos
   };
 };
