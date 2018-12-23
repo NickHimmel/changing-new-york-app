@@ -70,13 +70,6 @@ class Map extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  return {
-    isFetching: state.isFetching,
-    photos: state.photos
-  };
-};
-
 const mapDispatchToProps = dispatch => bindActionCreators (
   {
     fetchPhotos
@@ -85,6 +78,6 @@ const mapDispatchToProps = dispatch => bindActionCreators (
 )
 
 export default connect(
-  mapStateToProps,
+  null,
   mapDispatchToProps
 )(Map);

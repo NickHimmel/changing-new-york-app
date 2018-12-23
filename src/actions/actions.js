@@ -6,10 +6,10 @@ export const startFetchPhotos = () => {
   };
 };
 
-export const completeFetchPhotos = (photos) => {
+export const completeFetchPhotos = (data) => {
   return {
     type: 'COMPLETE_FETCH_PHOTOS',
-    photos
+    data
   };
 };
 

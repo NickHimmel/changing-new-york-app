@@ -5,10 +5,10 @@ export const photoReducer = (state = [], action) => {
         isFetching: true
       };
     case 'COMPLETE_FETCH_PHOTOS':
-    console.log(action)
       return {
         isFetching: false,
-        photos: action.photos
+        images: action.data.photos,
+        comparison: action.data.comparison
       };
     default:
       return state;
