@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { getUuid } from '../actions/actions.js'
+import { fetchPhotos } from '../actions/actions.js'
 class Map extends Component {
 
   componentDidMount() {
 
     const handleClick = (uuid) => {
-      this.props.getUuid(uuid);
+      console.log(uuid);
+      this.props.fetchPhotos(uuid);
     }
 
     const mapContainer = document.getElementById('map');
@@ -29,7 +30,7 @@ class Map extends Component {
       map.getCanvas().style.cursor = 'pointer';
 
       const features = map.queryRenderedFeatures(e.point, {
-        layers: ['the-new-york-waterfront']
+        layers: ['changing-new-york-waterfront']
       });
 
       if (!features.length) {
@@ -49,7 +50,7 @@ class Map extends Component {
     map.on('click', function(e) {
 
         const features = map.queryRenderedFeatures(e.point, {
-          layers: ['the-new-york-waterfront']
+          layers: ['changing-new-york-waterfront']
         });
 
         const feature = features[0];
@@ -72,13 +73,13 @@ class Map extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    uuid: state.uuid
+    photos: state.photos
   };
 };
 
 const mapDispatchToProps = dispatch => bindActionCreators (
   {
-    getUuid
+    fetchPhotos
   },
   dispatch,
 )
