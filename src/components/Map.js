@@ -6,8 +6,8 @@ class Map extends Component {
 
   componentDidMount() {
 
-    const onMapClick = (uuid) => {
-          this.props.getUuid(uuid)
+    const handleClick = (uuid) => {
+      this.props.getUuid(uuid);
     }
 
     const mapContainer = document.getElementById('map');
@@ -35,7 +35,7 @@ class Map extends Component {
       if (!features.length) {
         popup.remove();
         return;
-      }
+      };
 
       const feature = features[0];
 
@@ -47,12 +47,16 @@ class Map extends Component {
     });
 
     map.on('click', function(e) {
+
         const features = map.queryRenderedFeatures(e.point, {
           layers: ['the-new-york-waterfront']
         });
 
         const feature = features[0];
-        onMapClick(feature.properties.UUID)
+
+        if (feature !== undefined) {
+          handleClick(feature.properties.UUID);
+        };
     })
   }
 
