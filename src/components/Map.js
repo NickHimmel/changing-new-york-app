@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
-
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import { fetchPhotos } from '../actions/actions.js'
 class Map extends Component {
 
   componentDidMount() {
 
-    const onMapClick = (uuid) => {
-          this.props.onClick(uuid)
+    const handleClick = (uuid) => {
+      this.props.fetchPhotos(uuid);
     }
-    
+
     const mapContainer = document.getElementById('map');
     const MAPBOXGL = window.mapboxgl;
 
@@ -27,13 +29,13 @@ class Map extends Component {
       map.getCanvas().style.cursor = 'pointer';
 
       const features = map.queryRenderedFeatures(e.point, {
-        layers: ['the-new-york-waterfront']
+        layers: ['changing-new-york-waterfront']
       });
 
       if (!features.length) {
         popup.remove();
         return;
-      }
+      };
 
       const feature = features[0];
 
@@ -45,17 +47,20 @@ class Map extends Component {
     });
 
     map.on('click', function(e) {
+
         const features = map.queryRenderedFeatures(e.point, {
-          layers: ['the-new-york-waterfront']
+          layers: ['changing-new-york-waterfront']
         });
 
         const feature = features[0];
-        onMapClick(feature.properties.UUID)
+
+        if (feature !== undefined) {
+          handleClick(feature.properties.UUID);
+        };
     })
   }
 
   render() {
-
     return (
       <div>
         <div id='map'></div>
@@ -65,4 +70,14 @@ class Map extends Component {
   }
 }
 
-export default Map;
+const mapDispatchToProps = dispatch => bindActionCreators (
+  {
+    fetchPhotos
+  },
+  dispatch,
+)
+
+export default connect(
+  null,
+  mapDispatchToProps
+)(Map);
