@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import Map from './components/Map.js'
-import Photos from './components/Photos.js'
+import Comparison from './components/Comparison.js'
 
 require('dotenv').config();
 
