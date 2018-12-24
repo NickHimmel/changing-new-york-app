@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
-import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { fetchPhotos } from '../actions/actions.js'
 
 class Photos extends Component {
 
   render() {
+    console.log(this.props.images)
     return (
       <div>
       </div>
@@ -13,14 +12,14 @@ class Photos extends Component {
   }
 }
 
-const mapDispatchToProps = dispatch => bindActionCreators (
-  {
-    fetchPhotos
-  },
-  dispatch,
-)
+const mapStateToProps = (state) => {
+  return {
+    isFetching: state.photos.isFetching,
+    images: state.photos.images,
+    comparison: state.photos.comparison
+  };
+};
 
 export default connect(
-  null,
-  mapDispatchToProps
+  mapStateToProps
 )(Photos);
