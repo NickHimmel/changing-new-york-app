@@ -1,9 +1,12 @@
 import React from 'react';
 
-const Comparison = () => {
+const Comparison = (props) => {
+  console.log(props.data)
   return (
     <div>
-      <p>comparison</p>
+    {props.data.text.map((paragraph, i) => {
+      return <p key={i}>{paragraph}</p>
+    })}
     </div>
   )
 }
