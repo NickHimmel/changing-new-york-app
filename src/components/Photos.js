@@ -4,7 +4,9 @@ import { connect } from 'react-redux';
 class Photos extends Component {
 
   render() {
-    console.log(this.props.now_photo)
+    if(this.props.now_photo) {
+      console.log(this.props.now_photo.uuid)
+    }
     return (
       <div>
       </div>
