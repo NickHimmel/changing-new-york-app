@@ -7,15 +7,18 @@ class Photos extends Component {
 
   render() {
     if(this.props.now_photo) {
-      console.log(this.props.now_photo.uuid)
+      return (
+        <div>
+          <Photo data={this.props.then_photo}/>
+          <Photo data={this.props.now_photo}/>
+          <Comparison data={this.props.comparison}/>
+        </div>
+      )
+    } else {
+      return (
+        null
+      )
     }
-    return (
-      <div>
-        <Photo />
-        <Photo />
-        <Comparison />
-      </div>
-    );
   }
 }
 

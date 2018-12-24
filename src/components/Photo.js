@@ -1,6 +1,7 @@
 import React from 'react';
 
-const Photo = () => {
+const Photo = (props) => {
+  console.log(props.data.uuid)
   return (
     <div>
       <h1>Title</h1>
