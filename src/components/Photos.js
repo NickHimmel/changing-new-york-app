@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import Photo from './Photo.js';
+import Comparison from './Comparison.js';
 
 class Photos extends Component {
 
@@ -9,6 +11,9 @@ class Photos extends Component {
     }
     return (
       <div>
+        <Photo />
+        <Photo />
+        <Comparison />
       </div>
     );
   }
