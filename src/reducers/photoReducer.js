@@ -7,7 +7,8 @@ export const photoReducer = (state = [], action) => {
     case 'COMPLETE_FETCH_PHOTOS':
       return {
         isFetching: false,
-        images: action.data.photos,
+        then_photo: action.data.then_photo,
+        now_photo: action.data.now_photo,
         comparison: action.data.comparison
       };
     default:
