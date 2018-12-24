@@ -4,7 +4,7 @@ import Photo from './Photo.js';
 import Text from './Text.js';
 import Footnotes from './Footnotes.js';
 
-class Comparison extends Component {
+class Photos extends Component {
 
   render() {
     if(this.props.now_photo) {
@@ -18,7 +18,7 @@ class Comparison extends Component {
       )
     } else {
       return (
-        null
+        <div>{this.props.match.params.id}</div>
       )
     }
   }
@@ -35,4 +35,4 @@ const mapStateToProps = (state) => {
 
 export default connect(
   mapStateToProps
-)(Comparison);
+)(Photos);
