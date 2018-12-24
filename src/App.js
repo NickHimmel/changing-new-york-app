@@ -9,7 +9,7 @@ const App = () => {
   return (
     <div>
       <Map />
-      <Photos />
+      <Comparison />
     </div>
   );
 }
