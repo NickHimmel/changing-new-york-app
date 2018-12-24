@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 class Photos extends Component {
 
   render() {
-    console.log(this.props.images)
+    console.log(this.props.now_photo)
     return (
       <div>
       </div>
@@ -15,7 +15,8 @@ class Photos extends Component {
 const mapStateToProps = (state) => {
   return {
     isFetching: state.photos.isFetching,
-    images: state.photos.images,
+    then_photo: state.photos.then_photo,
+    now_photo: state.photos.now_photo,
     comparison: state.photos.comparison
   };
 };
