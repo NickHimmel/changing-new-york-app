@@ -1,11 +1,24 @@
 import React, { Component } from 'react';
+import { Redirect } from 'react-router';
 
 class Map extends Component {
+  constructor(props) {
+    super (props);
+
+    this.state = {
+      redirect: false,
+      uuid: ""
+    }
+  }
+
+  handleClick = (uuid) => {
+    this.setState({
+      redirect: true,
+      uuid: uuid
+    });
+  }
 
   componentDidMount() {
-
-    const handleClick = (uuid) => {
-    }
 
     const mapContainer = document.getElementById('map');
     const MAPBOXGL = window.mapboxgl;
@@ -21,7 +34,7 @@ class Map extends Component {
 
     var popup = new MAPBOXGL.Popup({ offset: [0, -15] })
 
-    map.on('mousemove', function(e) {
+    map.on('mousemove', (e) => {
 
       map.getCanvas().style.cursor = 'pointer';
 
@@ -43,7 +56,7 @@ class Map extends Component {
 
     });
 
-    map.on('click', function(e) {
+    map.on('click', (e) => {
 
         const features = map.queryRenderedFeatures(e.point, {
           layers: ['changing-new-york-waterfront']
@@ -52,16 +65,19 @@ class Map extends Component {
         const feature = features[0];
 
         if (feature !== undefined) {
-          handleClick(feature.properties.UUID);
+          this.handleClick(feature.properties.UUID);
         };
     })
   }
 
   render() {
+    if (this.state.redirect === true) {
+      return <Redirect to={`/photos/${this.state.uuid}`} />
+    }
     return (
       <div>
         <div id='map'></div>
-        <a href="https://blog.mapbox.com/designing-north-star-c8574e299c94">Design North Star</a>
+        <a href='https://blog.mapbox.com/designing-north-star-c8574e299c94'>Design North Star</a>
       </div>
     );
   }
