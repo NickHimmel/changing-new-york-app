@@ -1,7 +1,4 @@
 import React, { Component } from 'react';
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
-import { fetchPhotos } from '../actions/actions.js'
 
 class Map extends Component {
 
@@ -71,14 +68,5 @@ class Map extends Component {
   }
 }
 
-const mapDispatchToProps = dispatch => bindActionCreators (
-  {
-    fetchPhotos
-  },
-  dispatch,
-)
 
-export default connect(
-  null,
-  mapDispatchToProps
-)(Map);
+export default Map;
