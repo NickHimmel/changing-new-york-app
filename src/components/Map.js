@@ -59,7 +59,7 @@ class Map extends Component {
       };
 
       popup.setLngLat(this.state.feature.geometry.coordinates)
-        .setHTML('<h3>' + this.state.feature.properties.UUID + '</h3> <p>' + this.state.feature.properties.title + '</p>')
+        .setHTML('<p>' + this.state.feature.properties.title + '</p>')
         .setLngLat(this.state.feature.geometry.coordinates)
         .addTo(map)
 

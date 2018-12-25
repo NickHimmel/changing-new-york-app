@@ -16,10 +16,13 @@ class Photos extends Component {
     if(this.props.now_photo) {
       return (
         <div>
-          <Photo data={this.props.then_photo}/>
-          <Photo data={this.props.now_photo}/>
-          <Text data={this.props.comparison.text}/>
-          <Footnotes data={this.props.comparison.footnotes}/>
+          <a href="/">Return to Map</a>
+          <div>
+            <Photo data={this.props.then_photo}/>
+            <Photo data={this.props.now_photo}/>
+            <Text data={this.props.comparison.text}/>
+            <Footnotes data={this.props.comparison.footnotes}/>
+          </div>
         </div>
       )
     } else {
