@@ -1,15 +1,37 @@
 import React, { Component } from 'react';
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
-import { fetchPhotos } from '../actions/actions.js'
+import { Redirect } from 'react-router';
 
 class Map extends Component {
+  constructor(props) {
+    super (props);
+
+    this.state = {
+      redirect: false,
+      uuid: "",
+      features: [],
+      feature: {}
+    }
+  }
+
+  handleClick = (uuid) => {
+    this.setState({
+      redirect: true,
+      uuid: uuid
+    });
+  }
+
+  getFeatures = (e, map) => {
+    const features = map.queryRenderedFeatures(e.point, {
+      layers: ['changing-new-york-waterfront']
+    });
+
+    this.setState({
+      features: features,
+      feature: features[0]
+    });
+  }
 
   componentDidMount() {
-
-    const handleClick = (uuid) => {
-      this.props.fetchPhotos(uuid);
-    }
 
     const mapContainer = document.getElementById('map');
     const MAPBOXGL = window.mapboxgl;
@@ -25,60 +47,45 @@ class Map extends Component {
 
     var popup = new MAPBOXGL.Popup({ offset: [0, -15] })
 
-    map.on('mousemove', function(e) {
+    map.on('mousemove', (e) => {
 
       map.getCanvas().style.cursor = 'pointer';
 
-      const features = map.queryRenderedFeatures(e.point, {
-        layers: ['changing-new-york-waterfront']
-      });
+      this.getFeatures(e, map)
 
-      if (!features.length) {
+      if (!this.state.features.length) {
         popup.remove();
         return;
       };
 
-      const feature = features[0];
-
-      popup.setLngLat(feature.geometry.coordinates)
-        .setHTML('<h3>' + feature.properties.UUID + '</h3> <p>' + feature.properties.title + '</p>')
-        .setLngLat(feature.geometry.coordinates)
+      popup.setLngLat(this.state.feature.geometry.coordinates)
+        .setHTML('<p>' + this.state.feature.properties.title + '</p>')
+        .setLngLat(this.state.feature.geometry.coordinates)
         .addTo(map)
 
     });
 
-    map.on('click', function(e) {
+    map.on('click', (e) => {
 
-        const features = map.queryRenderedFeatures(e.point, {
-          layers: ['changing-new-york-waterfront']
-        });
+        this.getFeatures(e, map)
 
-        const feature = features[0];
-
-        if (feature !== undefined) {
-          handleClick(feature.properties.UUID);
+        if (this.state.feature !== undefined) {
+          this.handleClick(this.state.feature.properties.UUID);
         };
     })
   }
 
   render() {
+    if (this.state.redirect === true) {
+      return <Redirect to={`/photos/${this.state.uuid}`} />
+    }
     return (
       <div>
         <div id='map'></div>
-        <a href="https://blog.mapbox.com/designing-north-star-c8574e299c94">Design North Star</a>
+        <a href='https://blog.mapbox.com/designing-north-star-c8574e299c94'>Design North Star</a>
       </div>
     );
   }
 }
 
-const mapDispatchToProps = dispatch => bindActionCreators (
-  {
-    fetchPhotos
-  },
-  dispatch,
-)
-
-export default connect(
-  null,
-  mapDispatchToProps
-)(Map);
+export default Map;
