@@ -5,7 +5,6 @@ class Map extends Component {
   componentDidMount() {
 
     const handleClick = (uuid) => {
-      this.props.fetchPhotos(uuid);
     }
 
     const mapContainer = document.getElementById('map');
@@ -67,6 +66,5 @@ class Map extends Component {
     );
   }
 }
-
 
 export default Map;
