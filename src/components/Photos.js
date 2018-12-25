@@ -1,10 +1,16 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { fetchPhotos } from '../actions/actions.js'
 import Photo from './Photo.js';
 import Text from './Text.js';
 import Footnotes from './Footnotes.js';
 
 class Photos extends Component {
+
+  componentDidMount() {
+    this.props.fetchPhotos(this.props.match.params.id);
+  }
 
   render() {
     if(this.props.now_photo) {
@@ -18,7 +24,9 @@ class Photos extends Component {
       )
     } else {
       return (
-        <div>{this.props.match.params.id}</div>
+        <div>
+          <h1>Loading</h1>
+        </div>
       )
     }
   }
@@ -33,6 +41,14 @@ const mapStateToProps = (state) => {
   };
 };
 
+const mapDispatchToProps = dispatch => bindActionCreators (
+  {
+    fetchPhotos
+  },
+  dispatch,
+)
+
 export default connect(
-  mapStateToProps
+  mapStateToProps,
+  mapDispatchToProps
 )(Photos);
