@@ -7,7 +7,9 @@ class Map extends Component {
 
     this.state = {
       redirect: false,
-      uuid: ""
+      uuid: "",
+      features: [],
+      feature: {}
     }
   }
 
@@ -19,8 +21,13 @@ class Map extends Component {
   }
 
   getFeatures = (e, map) => {
-    return map.queryRenderedFeatures(e.point, {
+    const features = map.queryRenderedFeatures(e.point, {
       layers: ['changing-new-york-waterfront']
+    });
+
+    this.setState({
+      features: features,
+      feature: features[0]
     });
   }
 
@@ -44,30 +51,26 @@ class Map extends Component {
 
       map.getCanvas().style.cursor = 'pointer';
 
-      const features = this.getFeatures(e, map)
+      this.getFeatures(e, map)
 
-      if (!features.length) {
+      if (!this.state.features.length) {
         popup.remove();
         return;
       };
 
-      const feature = features[0];
-
-      popup.setLngLat(feature.geometry.coordinates)
-        .setHTML('<h3>' + feature.properties.UUID + '</h3> <p>' + feature.properties.title + '</p>')
-        .setLngLat(feature.geometry.coordinates)
+      popup.setLngLat(this.state.feature.geometry.coordinates)
+        .setHTML('<h3>' + this.state.feature.properties.UUID + '</h3> <p>' + this.state.feature.properties.title + '</p>')
+        .setLngLat(this.state.feature.geometry.coordinates)
         .addTo(map)
 
     });
 
     map.on('click', (e) => {
 
-        const features = this.getFeatures(e, map)
+        this.getFeatures(e, map)
 
-        const feature = features[0];
-
-        if (feature !== undefined) {
-          this.handleClick(feature.properties.UUID);
+        if (this.state.feature !== undefined) {
+          this.handleClick(this.state.feature.properties.UUID);
         };
     })
   }
