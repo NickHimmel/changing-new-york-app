@@ -18,6 +18,12 @@ class Map extends Component {
     });
   }
 
+  getFeatures = (e, map) => {
+    return map.queryRenderedFeatures(e.point, {
+      layers: ['changing-new-york-waterfront']
+    });
+  }
+
   componentDidMount() {
 
     const mapContainer = document.getElementById('map');
@@ -38,9 +44,7 @@ class Map extends Component {
 
       map.getCanvas().style.cursor = 'pointer';
 
-      const features = map.queryRenderedFeatures(e.point, {
-        layers: ['changing-new-york-waterfront']
-      });
+      const features = this.getFeatures(e, map)
 
       if (!features.length) {
         popup.remove();
@@ -58,9 +62,7 @@ class Map extends Component {
 
     map.on('click', (e) => {
 
-        const features = map.queryRenderedFeatures(e.point, {
-          layers: ['changing-new-york-waterfront']
-        });
+        const features = this.getFeatures(e, map)
 
         const feature = features[0];
 
