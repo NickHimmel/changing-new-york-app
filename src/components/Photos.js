@@ -13,7 +13,7 @@ class Photos extends Component {
   }
 
   render() {
-    if(this.props.now_photo) {
+    if(this.props.isFetching === false) {
       return (
         <div>
           <a href="/">Return to Map</a>
