@@ -10,12 +10,3 @@ body {
   height: 600px;
   margin: 25px;
 }
-
-.photo {
-  display: inline-block;
-  width: 49%;
-}
-
-.photo-image {
-  max-width: 500px;
-}
