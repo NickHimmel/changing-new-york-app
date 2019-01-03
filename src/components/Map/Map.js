@@ -41,6 +41,7 @@ class Map extends Component {
         style: 'mapbox://styles/nickhimmel/cjdqhpjto1hev2sn5lxumgusz',
         center: [-73.9970, 40.705],
         zoom: 13.6,
+        interactive: false
     });
 
     var popup = new MAPBOXGL.Popup({ offset: [0, -15] })
