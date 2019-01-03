@@ -1,28 +1,33 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { fetchPhotos } from '../actions/actions.js'
-import Photo from './Photo.js';
-import Text from './Text.js';
-import Footnotes from './Footnotes.js';
+import { fetchPhotos } from '../../actions/actions.js'
+import Photo from '../Photo/Photo.js';
+import Text from '../Text.js';
+import Footnotes from '../Footnotes.js';
+import styles from './Photos.module.css';
 
 class Photos extends Component {
+  constructor(props) {
+    super (props);
+
+    this.state = {
+      uuid: 'e3c8e2d0-c60c-012f-d813-58d385a7bc34'
+    }
+  }
 
   componentDidMount() {
-    this.props.fetchPhotos(this.props.match.params.id);
+    this.props.fetchPhotos(this.state.uuid);
   }
 
   render() {
     if(this.props.isFetching === false) {
       return (
-        <div>
-          <a href="/">Return to Map</a>
-          <div>
-            <Photo data={this.props.then_photo}/>
-            <Photo data={this.props.now_photo}/>
-            <Text data={this.props.comparison.text}/>
-            <Footnotes data={this.props.comparison.footnotes}/>
-          </div>
+        <div className={styles.container}>
+          <Photo data={this.props.then_photo}/>
+          <Photo data={this.props.now_photo}/>
+          <Text data={this.props.comparison.text}/>
+          <Footnotes data={this.props.comparison.footnotes}/>
         </div>
       )
     } else {

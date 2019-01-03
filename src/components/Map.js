@@ -1,23 +1,20 @@
 import React, { Component } from 'react';
-import { Redirect } from 'react-router';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { fetchPhotos } from '../actions/actions.js'
 
 class Map extends Component {
   constructor(props) {
     super (props);
 
     this.state = {
-      redirect: false,
-      uuid: "",
       features: [],
       feature: {}
     }
   }
 
   handleClick = (uuid) => {
-    this.setState({
-      redirect: true,
-      uuid: uuid
-    });
+    this.props.fetchPhotos(uuid);
   }
 
   getFeatures = (e, map) => {
@@ -76,9 +73,6 @@ class Map extends Component {
   }
 
   render() {
-    if (this.state.redirect === true) {
-      return <Redirect to={`/photos/${this.state.uuid}`} />
-    }
     return (
       <div>
         <div id='map'></div>
@@ -88,4 +82,14 @@ class Map extends Component {
   }
 }
 
-export default Map;
+const mapDispatchToProps = dispatch => bindActionCreators (
+  {
+    fetchPhotos
+  },
+  dispatch,
+)
+
+export default connect(
+  null,
+  mapDispatchToProps
+)(Map);
