@@ -5,3 +5,7 @@
 .serif {
   font-family: 'Crimson Text', serif;
 }
+
+.bold {
+  font-weight: 600;
+}

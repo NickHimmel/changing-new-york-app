@@ -1,3 +1,15 @@
-.title {
-  background-color: red;
+.note {
+  composes: serif from '../../base-styles/type.css';
+  font-size: 15px;
+  line-height: 19px;
+}
+
+.image {
+  max-width: 500px;
+}
+
+.photographer {
+  composes: sans-serif from '../../base-styles/type.css';
+  composes: bold from '../../base-styles/type.css';
+  text-transform: uppercase;
 }
