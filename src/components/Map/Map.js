@@ -39,8 +39,8 @@ class Map extends Component {
     const map = new MAPBOXGL.Map({
         container: mapContainer,
         style: 'mapbox://styles/nickhimmel/cjdqhpjto1hev2sn5lxumgusz',
-        center: [-73.9970, 40.705],
-        zoom: 13.6,
+        center: [-74.02, 40.705],
+        zoom: 13,
         interactive: false
     });
 
