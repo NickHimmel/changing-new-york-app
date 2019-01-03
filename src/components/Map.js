@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import { Redirect } from 'react-router';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { getUuid } from '../actions/actions.js'
+import { fetchPhotos } from '../actions/actions.js'
 
 class Map extends Component {
   constructor(props) {
@@ -15,7 +14,7 @@ class Map extends Component {
   }
 
   handleClick = (uuid) => {
-    this.props.getUuid(uuid);
+    this.props.fetchPhotos(uuid);
   }
 
   getFeatures = (e, map) => {
@@ -85,7 +84,7 @@ class Map extends Component {
 
 const mapDispatchToProps = dispatch => bindActionCreators (
   {
-    getUuid
+    fetchPhotos
   },
   dispatch,
 )
