@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { fetchPhotos } from '../actions/actions.js'
+import { fetchPhotos } from '../../actions/actions.js'
+import styles from './Map.module.css';
 
 class Map extends Component {
   constructor(props) {
@@ -74,8 +75,8 @@ class Map extends Component {
 
   render() {
     return (
-      <div>
-        <div id='map'></div>
+      <div className={styles.container}>
+        <div id='map' className={styles.map}></div>
         <a href='https://blog.mapbox.com/designing-north-star-c8574e299c94'>Design North Star</a>
       </div>
     );
