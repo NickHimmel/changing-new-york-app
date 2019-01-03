@@ -8,8 +8,16 @@
   max-width: 500px;
 }
 
+.credits h3 {
+  display: inline;
+}
+
 .photographer {
   composes: sans-serif from '../../base-styles/type.css';
   composes: bold from '../../base-styles/type.css';
   text-transform: uppercase;
+}
+
+.date {
+  composes: sans-serif from '../../base-styles/type.css';
 }
