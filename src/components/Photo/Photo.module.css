@@ -1,5 +1,5 @@
 .note {
-  composes: serif from '../../base-styles/type.css';
+  composes: serif from '../../base-styles/Type.module.css';
   font-size: 15px;
   line-height: 19px;
 }
@@ -13,11 +13,11 @@
 }
 
 .photographer {
-  composes: sans-serif from '../../base-styles/type.css';
-  composes: bold from '../../base-styles/type.css';
+  composes: sans-serif from '../../base-styles/Type.module.css';
+  composes: bold from '../../base-styles/Type.module.css';
   text-transform: uppercase;
 }
 
 .date {
-  composes: sans-serif from '../../base-styles/type.css';
+  composes: sans-serif from '../../base-styles/Type.module.css';
 }
