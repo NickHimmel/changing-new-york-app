@@ -1,4 +1,5 @@
 import React from 'react';
+import 'normalize.css';
 import './App.css';
 import Map from './components/Map/Map.js'
 import Photos from './components/Photos/Photos.js'
