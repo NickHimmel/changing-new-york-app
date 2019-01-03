@@ -1,5 +1,12 @@
 import axios from 'axios';
 
+export const getUuid = (uuid) => {
+  return {
+    type: 'GET_UUID',
+    uuid
+  };
+};
+
 export const startFetchPhotos = () => {
   return {
     type: 'START_FETCH_PHOTOS'

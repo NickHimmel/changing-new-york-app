@@ -1,5 +1,9 @@
 export const photoReducer = (state = [], action) => {
   switch (action.type) {
+    case 'GET_UUID':
+      return {
+        uuid: action.uuid
+      };
     case 'START_FETCH_PHOTOS':
       return {
         isFetching: true

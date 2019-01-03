@@ -7,9 +7,16 @@ import Text from './Text.js';
 import Footnotes from './Footnotes.js';
 
 class Photos extends Component {
+  constructor(props) {
+    super (props);
+
+    this.state = {
+      uuid: 'e3c8e2d0-c60c-012f-d813-58d385a7bc34'
+    }
+  }
 
   componentDidMount() {
-    this.props.fetchPhotos(this.props.match.params.id);
+    this.props.fetchPhotos(this.state.uuid);
   }
 
   render() {
