@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { fetchPhotos } from '../actions/actions.js'
+import { fetchPhotos } from '../../actions/actions.js'
+import styles from './Map.module.css';
 
 class Map extends Component {
   constructor(props) {
@@ -38,8 +39,9 @@ class Map extends Component {
     const map = new MAPBOXGL.Map({
         container: mapContainer,
         style: 'mapbox://styles/nickhimmel/cjdqhpjto1hev2sn5lxumgusz',
-        center: [-73.9970, 40.705],
-        zoom: 13.6,
+        center: [-74.02, 40.705],
+        zoom: 13,
+        interactive: false
     });
 
     var popup = new MAPBOXGL.Popup({ offset: [0, -15] })
@@ -74,8 +76,7 @@ class Map extends Component {
 
   render() {
     return (
-      <div>
-        <div id='map'></div>
+      <div id='map' className={styles.container}>
         <a href='https://blog.mapbox.com/designing-north-star-c8574e299c94'>Design North Star</a>
       </div>
     );
