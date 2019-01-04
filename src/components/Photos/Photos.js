@@ -21,22 +21,20 @@ class Photos extends Component {
   }
 
   render() {
-    if(this.props.isFetching === false) {
-      return (
-        <div className={styles.container}>
-          <Photo data={this.props.then_photo}/>
-          <Photo data={this.props.now_photo}/>
-          <Text data={this.props.comparison.text}/>
-          <Footnotes data={this.props.comparison.footnotes}/>
-        </div>
-      )
-    } else {
-      return (
-        <div>
-          <h1>Loading</h1>
-        </div>
-      )
-    }
+    return (
+      <div className={styles.container}>
+        {this.props.isFetching || this.props.isFetching === undefined ? (
+          <h1>Loading...</h1>
+        ) : (
+          <div>
+            <Photo data={this.props.then_photo}/>
+            <Photo data={this.props.now_photo}/>
+            <Text data={this.props.comparison.text}/>
+            <Footnotes data={this.props.comparison.footnotes}/>
+          </div>
+        )}
+      </div>
+    )
   }
 }
 

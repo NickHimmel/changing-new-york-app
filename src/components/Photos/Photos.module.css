@@ -1,6 +1,5 @@
 .container {
-  background-color: #fff;
   grid-column: 2 / span 5;
   z-index: 1;
-  min-height: 900px;
+  min-height: 2500px;
 }
