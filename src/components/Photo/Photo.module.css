@@ -1,16 +1,24 @@
+.container {
+  margin-bottom: 25px;
+}
+
+.title {
+  composes: sans-serif from '../../base-styles/Type.module.css';
+  font-size: 24px;
+}
+
 .note {
   composes: serif from '../../base-styles/Type.module.css';
   font-size: 15px;
   line-height: 19px;
 }
 
-.image {
-  max-height: 400px;
-  max-width: 100%;
+.link {
+  composes: flexCenter from '../../base-styles/Layout.module.css';
 }
-
-.credits h3 {
-  display: inline;
+.image {
+  max-height: 425px;
+  max-width: 100%;
 }
 
 .photographer {

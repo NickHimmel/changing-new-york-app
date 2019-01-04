@@ -1,0 +1,15 @@
+.title {
+  composes: serif from '../../base-styles/Type.module.css';
+  composes: bold from '../../base-styles/Type.module.css';
+  text-align: center;
+}
+
+.line {
+  width: 30px;
+  border-top: 1px solid #db4839;
+  margin: auto;
+}
+
+.text {
+  composes: serif from '../../base-styles/Type.module.css';
+}

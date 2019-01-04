@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { fetchPhotos } from '../../actions/actions.js'
 import Photo from '../Photo/Photo.js';
-import Text from '../Text.js';
+import Text from '../Text/Text.js';
 import Footnotes from '../Footnotes.js';
 import styles from './Photos.module.css';
 
