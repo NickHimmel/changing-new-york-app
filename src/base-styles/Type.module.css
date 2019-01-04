@@ -6,6 +6,10 @@
   font-family: 'Crimson Text', serif;
 }
 
+.regular {
+  font-weight: 400;
+}
+
 .bold {
   font-weight: 600;
 }

@@ -16,11 +16,9 @@ const Photo = (props) => {
         <img className={styles.image} src={props.data.image} alt={props.data.title}/>
       </a>
       <h2 className={styles.note}>{props.data.note}</h2>
-      <div className={styles.credits}>
-        <h3 className={styles.photographer}>{props.data.photographer}</h3>
-        <h3 className={styles.date}>{longDate(props.data.date)}</h3>
-        <h3><a href={props.data.rights_link} target="_blank" rel="noopener noreferrer">{props.data.rights}</a></h3>
-      </div>
+      <h3 className={styles.photographer}>{props.data.photographer}, <span className={styles.date}>{longDate(props.data.date)}</span></h3>
+
+      <a href={props.data.rights_link} target="_blank" rel="noopener noreferrer">{props.data.rights}</a>
     </div>
   )
 }

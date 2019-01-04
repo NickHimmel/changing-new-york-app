@@ -21,4 +21,5 @@
 
 .date {
   composes: sans-serif from '../../base-styles/Type.module.css';
+  composes: regular from '../../base-styles/Type.module.css';
 }
