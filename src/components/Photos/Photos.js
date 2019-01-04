@@ -26,7 +26,7 @@ class Photos extends Component {
         {this.props.isFetching || this.props.isFetching === undefined ? (
           <h1>Loading...</h1>
         ) : (
-          <div>
+          <div className={styles.inner}>
             <Photo data={this.props.then_photo}/>
             <Photo data={this.props.now_photo}/>
             <Text data={this.props.comparison.text}/>

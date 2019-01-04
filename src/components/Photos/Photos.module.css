@@ -3,3 +3,7 @@
   z-index: 1;
   min-height: 2500px;
 }
+
+.inner {
+  background-color: #fff;
+}
