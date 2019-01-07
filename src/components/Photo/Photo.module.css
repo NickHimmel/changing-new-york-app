@@ -3,7 +3,7 @@
 }
 
 .link {
-  composes: flexCenter from '../../base-styles/Layout.module.css';
+  composes: flexCenter from '../../base-styles/layout.css';
 }
 
 .image {

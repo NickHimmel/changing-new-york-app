@@ -7,3 +7,7 @@ a {
 a:hover {
   color: #db4839;
 }
+
+.container {
+  composes: twelveColumnGrid from './base-styles/layout.css';
+}
