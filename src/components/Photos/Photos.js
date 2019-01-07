@@ -18,7 +18,7 @@ class Photos extends Component {
   }
 
   componentDidMount() {
-    axios.get('/api/v1/items/c790af50-c60c-012f-2305-58d385a7bc34?withTitles=yes')
+    axios.get('/api/v1/items/e3c8e2d0-c60c-012f-d813-58d385a7bc34?withTitles=yes')
       .then(function (response) {
         console.log(response);
       })
