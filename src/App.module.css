@@ -1,7 +1,8 @@
 a {
   font-family: 'Alegreya Sans', sans-serif;
   color: #000;
-  text-decoration-color: #db4839;
+  text-decoration: none;
+  border-bottom: 1px solid #db4839;
 }
 
 a:hover {

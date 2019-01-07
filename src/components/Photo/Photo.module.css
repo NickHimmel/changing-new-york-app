@@ -4,6 +4,7 @@
 
 .link {
   composes: flexCenter from '../../base-styles/layout.css';
+  border-bottom: 0;
 }
 
 .image {

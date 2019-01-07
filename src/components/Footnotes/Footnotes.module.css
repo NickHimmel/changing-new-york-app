@@ -3,43 +3,43 @@
 }
 
 .toolTip {
-  position: relative;
   display: inline-block;
+  position: relative;
 }
 
 .toolTipText {
   composes: sansSerif from '../../base-styles/type.css';
   composes: captions from '../../base-styles/type.css';
-  visibility: hidden;
-  width: 300px;
   background-color: #000;
-  color: #fff;
-  text-align: center;
   border-radius: 6px;
-  padding: 10px;
-  position: absolute;
-  z-index: 1;
   bottom: 125%;
+  color: #fff;
   left: 50%;
   margin-left: -162px;
+  padding: 10px;
+  position: absolute;
   opacity: 0;
+  text-align: center;
   transition: opacity 0.3s;
+  visibility: hidden;
+  width: 300px;
+  z-index: 1;
 }
 
 .toolTipText::after {
-  content: "";
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  margin-left: -5px;
   border-width: 5px;
   border-style: solid;
   border-color: #000 transparent transparent transparent;
+  content: "";
+  left: 50%;
+  margin-left: -5px;
+  position: absolute;
+  top: 100%;
 }
 
 .toolTip:hover .toolTipText {
-  visibility: visible;
   opacity: 1;
+  visibility: visible;
 }
 
 .footnoteLink {
