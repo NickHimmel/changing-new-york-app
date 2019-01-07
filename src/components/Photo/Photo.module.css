@@ -34,6 +34,5 @@
 
 .rightsLink, .date, .photographer, .note {
   composes: lightGrey from '../../base-styles/color.css';
-  font-size: 12px;
-  line-height: 19px;
+  composes: captions from '../../base-styles/type.css';
 }
