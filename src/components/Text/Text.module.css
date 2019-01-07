@@ -1,17 +1,19 @@
 .title {
-  composes: serif from '../../base-styles/Type.module.css';
-  composes: bold from '../../base-styles/Type.module.css';
+  composes: bold from '../../base-styles/type.css';
   margin: 25px 0;
   text-align: center;
 }
 
 .line {
-  width: 30px;
   border-top: 1px solid #db4839;
   margin: 25px auto;
+  width: 30px;
 }
 
 .body {
-  composes: serif from '../../base-styles/Type.module.css';
   margin: 18px 0;
+}
+
+.body, .title {
+  composes: serif from '../../base-styles/type.css';
 }
