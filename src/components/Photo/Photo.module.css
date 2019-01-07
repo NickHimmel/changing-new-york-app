@@ -16,6 +16,7 @@
 .link {
   composes: flexCenter from '../../base-styles/Layout.module.css';
 }
+
 .image {
   max-height: 425px;
   max-width: 100%;

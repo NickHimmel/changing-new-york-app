@@ -7,7 +7,7 @@ const Text = (props) => {
       <h2 className={styles.title}>Now and Then</h2>
       <div className={styles.line}></div>
       {props.data.map((paragraph, i) => {
-        return <p className={styles.text} key={i}>{paragraph}</p>
+        return <p className={styles.body} key={i}>{paragraph}</p>
       })}
     </div>
   )
