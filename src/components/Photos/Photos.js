@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { fetchPhotos } from '../../actions/actions.js'
@@ -17,6 +18,14 @@ class Photos extends Component {
   }
 
   componentDidMount() {
+    axios.get('/api/v1/items/e3c8e2d0-c60c-012f-d813-58d385a7bc34?withTitles=yes')
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+
     this.props.fetchPhotos(this.state.uuid);
   }
 
