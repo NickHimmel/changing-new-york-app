@@ -3,8 +3,8 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { fetchPhotos } from '../../actions/actions.js'
 import Photo from '../Photo/Photo.js';
-import Text from '../Text.js';
-import Footnotes from '../Footnotes.js';
+import Text from '../Text/Text.js';
+import Footnotes from '../Footnotes/Footnotes.js';
 import styles from './Photos.module.css';
 
 class Photos extends Component {
@@ -26,7 +26,7 @@ class Photos extends Component {
         {this.props.isFetching || this.props.isFetching === undefined ? (
           <h1>Loading...</h1>
         ) : (
-          <div>
+          <div className={styles.inner}>
             <Photo data={this.props.then_photo}/>
             <Photo data={this.props.now_photo}/>
             <Text data={this.props.comparison.text}/>

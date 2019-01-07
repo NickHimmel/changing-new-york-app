@@ -1,0 +1,15 @@
+.twelveColumnGrid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  position: relative;
+}
+
+.flexCenter {
+  display: flex;
+  justify-content: center;
+}
+
+.flexSpaceAround {
+  display: flex;
+  justify-content: space-around;
+}

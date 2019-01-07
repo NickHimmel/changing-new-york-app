@@ -1,4 +1,4 @@
-.sans-serif {
+.sansSerif {
   font-family: 'Alegreya Sans', sans-serif;
 }
 
@@ -6,6 +6,15 @@
   font-family: 'Crimson Text', serif;
 }
 
+.regular {
+  font-weight: 400;
+}
+
 .bold {
   font-weight: 600;
+}
+
+.captions {
+  font-size: 12px;
+  line-height: 19px;
 }

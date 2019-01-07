@@ -1,23 +1,44 @@
-.note {
-  composes: serif from '../../base-styles/Type.module.css';
-  font-size: 15px;
-  line-height: 19px;
+.container {
+  margin-bottom: 25px;
+}
+
+.link {
+  composes: flexCenter from '../../base-styles/layout.css';
+  border-bottom: 0;
 }
 
 .image {
-  width: 100%;
+  max-height: 425px;
+  max-width: 100%;
 }
 
-.credits h3 {
-  display: inline;
+.title {
+  composes: captions from '../../base-styles/type.css';
+  composes: lightGrey from '../../base-styles/color.css';
+  composes: serif from '../../base-styles/type.css';
+  margin: 1px 0;
+}
+
+.note {
+  composes: regular from '../../base-styles/type.css';
 }
 
 .photographer {
-  composes: sans-serif from '../../base-styles/Type.module.css';
-  composes: bold from '../../base-styles/Type.module.css';
+  composes: bold from '../../base-styles/type.css';
+  composes: captions from '../../base-styles/type.css';
+  composes: lightGrey from '../../base-styles/color.css';
+  composes: sansSerif from '../../base-styles/type.css';
   text-transform: uppercase;
+  display: inline;
 }
 
 .date {
-  composes: sans-serif from '../../base-styles/Type.module.css';
+  composes: regular from '../../base-styles/type.css';
+  composes: sansSerif from '../../base-styles/type.css';
+}
+
+.rightsLink {
+  composes: captions from '../../base-styles/type.css';
+  composes: lightGrey from '../../base-styles/color.css';
+  margin-left: 5px;
 }
