@@ -8,3 +8,21 @@
   background-color: #fff;
   padding: 25px;
 }
+
+.header {
+  composes: sansSerif from '../../base-styles/type.css';
+  font-size: 22px;
+  line-height: 30px;
+}
+
+.line {
+  border-top: 2px solid #db4839;
+  margin: 50px auto;
+  width: 65px;
+}
+
+.text {
+  composes: serif from '../../base-styles/type.css';
+  font-size: 19px;
+  line-height: 28px;
+}
