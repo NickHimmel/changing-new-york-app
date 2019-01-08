@@ -1,4 +1,10 @@
 .container {
-  grid-column: 2 / -2;
+  grid-column: 4 / -4;
   z-index: 2;
+  margin: 100px 0;
+}
+
+.inner {
+  background-color: #fff;
+  padding: 25px;
 }
