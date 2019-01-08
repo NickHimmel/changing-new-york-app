@@ -1,20 +1,18 @@
 export const thenPhoto = (items, mods) => {
-  const itmesRoot = items.data.nyplAPI.response.capture[0];
+  const itemsRoot = items.data.nyplAPI.response.capture[0];
   const modsRoot = mods.data.nyplAPI.response.mods;
 
-  console.log(itmesRoot);
-  console.log(modsRoot);
   return {
     thenPhoto: {
-      uuid: itmesRoot.uuid,
-      title: itmesRoot.title,
+      uuid: itemsRoot.uuid,
+      title: itemsRoot.title,
       note: getNote(modsRoot.note),
       photographer: 'Berenice Abbott',
       date: formatDate(modsRoot.originInfo.dateCreated.$),
-      image: itmesRoot.imageLinks.imageLink[3],
-      image: itmesRoot.itemLink,
+      image: itemsRoot.imageLinks.imageLink[3],
+      image: itemsRoot.itemLink,
       rights: "From The New York Public Library",
-      rights_link: itmesRoot.rightsStatementURI
+      rights_link: itemsRoot.rightsStatementURI
     }
   }
 }
