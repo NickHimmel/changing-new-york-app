@@ -10,11 +10,15 @@ export const thenPhoto = (items, mods) => {
       photographer: 'Berenice Abbott',
       date: formatDate(modsRoot.originInfo.dateCreated.$),
       image: itemsRoot.imageLinks.imageLink[3],
-      image: itemsRoot.itemLink,
+      item_link: itemsRoot.itemLink,
       rights: "From The New York Public Library",
       rights_link: itemsRoot.rightsStatementURI
     }
   }
+}
+
+export const findByUuid = (items, uuid) => {
+  return items.filter((item) => item.uuid === uuid);
 }
 
 const getNote = (notes) => {
