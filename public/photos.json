@@ -1,0 +1,137 @@
+[
+    {
+        "uuid": "aee450e0-c60c-012f-2b4b-58d385a7bc34",
+        "title": "The Brooklyn Heights Promenade, looking northwest toward Manhattan",
+        "note": "Tourists and people along the promenade with the BQE and Brooklyn Bridge park below, skyline of Manhattan visible behind the Brooklyn Bridge.",
+        "photographer": "Nick Himmel",
+        "date": "10/09/2018",
+        "image": "https://s3.us-east-2.amazonaws.com/changing-new-york.herokuapp.com/aee450e0-c60c-012f-2b4b-58d385a7bc34.jpg?versionId=null",
+        "item_link": "http://nickhimmel.com/"
+    },
+    {
+        "uuid": "c790af50-c60c-012f-2305-58d385a7bc34",
+        "title": "Pilot, Pier 6, East River, Brooklyn.",
+        "note": "Restaurant Pilot moored at Pier 6, patrons at oyster bar, Manhattan in the distance.",
+        "photographer": "Nick Himmel",
+        "date": "09/01/2017",
+        "image": "https://s3.us-east-2.amazonaws.com/changing-new-york.herokuapp.com/c790af50-c60c-012f-2305-58d385a7bc34.jpg",
+        "item_link": "http://nickhimmel.com/"
+    },
+    {
+        "uuid": "a34e87b0-c60c-012f-6ea3-58d385a7bc34",
+        "title": "Empire Stores Warehouse, Water and Main Streets, Brooklyn.",
+        "note": "Five-story brick warehouse with arched windows and doors, with a fully displayed West Elm advertisement painted on it.",
+        "photographer": "Nick Himmel",
+        "date": "09/09/2017",
+        "image": "https://s3.us-east-2.amazonaws.com/changing-new-york.herokuapp.com/a34e87b0-c60c-012f-6ea3-58d385a7bc34.jpg",
+        "item_link": "http://nickhimmel.com/"
+    },
+    {
+        "uuid": "ac519960-c60c-012f-c327-58d385a7bc34",
+        "title": "Brooklyn Bridge, Water and Dock Streets, looking southeast, Brooklyn.",
+        "note": "Reflection of St. Ann’s Warehouse, Empire Stores, and the Brooklyn Bridge in the window of 60 Water condo.",
+        "photographer": "Nick Himmel",
+        "date": "01/09/2018",
+        "image": "https://s3.us-east-2.amazonaws.com/changing-new-york.herokuapp.com/ac519960-c60c-012f-c327-58d385a7bc34.jpg",
+        "item_link": "http://nickhimmel.com/"
+    },
+    {
+        "uuid": "b2295550-c60c-012f-7451-58d385a7bc34",
+        "title": "Furman Street no. 90 Brooklyn.",
+        "note": "106-unit condo residence, large windows set in steel and stone, Brooklyn Bridge Park in foreground.",
+        "photographer": "Nick Himmel",
+        "date": "01/09/2018",
+        "image": "https://s3.us-east-2.amazonaws.com/changing-new-york.herokuapp.com/b2295550-c60c-012f-7451-58d385a7bc34.jpg",
+        "item_link": "http://nickhimmel.com/"
+    },
+    {
+        "uuid": "e167b920-c60c-012f-9050-58d385a7bc34",
+        "title": "Brooklyn Bridge, The FDR Drive, Manhattan.",
+        "note": "On/Off ramps for the The FDR, Taxi on the FDR Drive, Brooklyn Bridge rising behind.",
+        "photographer": "Nick Himmel",
+        "date": "09/02/2017",
+        "image": "https://s3.us-east-2.amazonaws.com/changing-new-york.herokuapp.com/e167b920-c60c-012f-9050-58d385a7bc34.jpg",
+        "item_link": "http://nickhimmel.com/"
+    },
+    {
+        "uuid": "03e0c100-c60d-012f-6091-58d385a7bc34",
+        "title": "East River Bikeway, Under the FDR Dr., parallel to South Street.",
+        "note": "People biking, running, and walking under the highway, while others view the river. The Manhattan Bridge and Brooklyn visible in the back right.",
+        "photographer": "Nick Himmel",
+        "date": "09/03/2018",
+        "image": "https://s3.us-east-2.amazonaws.com/changing-new-york.herokuapp.com/03e0c100-c60d-012f-6091-58d385a7bc34.jpg",
+        "item_link": "http://nickhimmel.com/"
+    },
+    {
+        "uuid": "0bc0ef10-c60d-012f-02a5-58d385a7bc34",
+        "title": "Downtown Manhattan Heliport, Pier 6, East River, Manhattan.",
+        "note": "The FDR Drive in front of Pier 6. A helicopter lands at the Downtown Manhattan Heliport.",
+        "photographer": "Nick Himmel",
+        "date": "08/30/2018",
+        "image": "https://s3.us-east-2.amazonaws.com/changing-new-york.herokuapp.com/0bc0ef10-c60d-012f-02a5-58d385a7bc34.jpg",
+        "item_link": "http://nickhimmel.com/"
+    },
+    {
+        "uuid": "e3c8e2d0-c60c-012f-d813-58d385a7bc34",
+        "title": "One Manhattan Square, South Street, Manhattan, from the East River.",
+        "note": "One Manhattan Square, Two Bridges Tower Apartments, LaGuardia Houses,  Lands End II on South Street with the Manhattan Bridge in front.",
+        "photographer": "Nick Himmel",
+        "date": "08/30/2018",
+        "image": "https://s3.us-east-2.amazonaws.com/changing-new-york.herokuapp.com/e3c8e2d0-c60c-012f-d813-58d385a7bc34.jpg",
+        "item_link": "http://nickhimmel.com/"
+    },
+    {
+        "uuid": "c637cf10-c60c-012f-480c-58d385a7bc34",
+        "title": "NYC Ferry, Pier 11, East River, Manhattan.",
+        "note": "Passengers waiting to board as passengers disembark moored ferry, Brooklyn beyond.",
+        "photographer": "Nick Himmel",
+        "date": "12/21/2017",
+        "image": "https://s3.us-east-2.amazonaws.com/changing-new-york.herokuapp.com/c637cf10-c60c-012f-480c-58d385a7bc34.jpg",
+        "item_link": "http://nickhimmel.com/"
+    },
+    {
+        "uuid": "b4602130-c60c-012f-3b0b-58d385a7bc34",
+        "title": "Pier 17, Manhattan.",
+        "note": "People at the Heineken Riverdeck, behind it the Chase Sapphire Lounge with Geronimo’s balloon sculpture hanging above.",
+        "photographer": "Nick Himmel",
+        "date": "9/15/2018",
+        "image": "https://s3.us-east-2.amazonaws.com/changing-new-york.herokuapp.com/b4602130-c60c-012f-3b0b-58d385a7bc34.jpg",
+        "item_link": "http://nickhimmel.com/"
+    },
+    {
+        "uuid": "9c9a3720-c60c-012f-bd88-58d385a7bc34",
+        "title": "Manhattan Skyline: East River approaching Pier 11.",
+        "note": "Looking from ferry toward Manhattan, Right of Pier 11 (not pictured), FDR over the East River Esplanade, skyscrapers in the background.",
+        "photographer": "Nick Himmel",
+        "date": "9/12/2017",
+        "image": "https://s3.us-east-2.amazonaws.com/changing-new-york.herokuapp.com/9c9a3720-c60c-012f-bd88-58d385a7bc34.jpg",
+        "item_link": "http://nickhimmel.com/"
+    },
+    {
+        "uuid": "ae6c9620-c60c-012f-8c20-58d385a7bc34",
+        "title": "The SeaGlass Carousel, The Battery, Manhattan.",
+        "note": "Interior of the SeaGlass Carousel with rides shaped like fish, south of Castle Clinton.",
+        "photographer": "Nick Himmel",
+        "date": "9/12/2017",
+        "image": "https://s3.us-east-2.amazonaws.com/changing-new-york.herokuapp.com/ae6c9620-c60c-012f-8c20-58d385a7bc34.jpg",
+        "item_link": "http://nickhimmel.com/"
+    },
+    {
+        "uuid": "aa10d490-c60c-012f-103f-58d385a7bc34",
+        "title": "One World Trade Center, West Street, Manhattan.",
+        "note": "One World Trade Center from West St and Vesey St.",
+        "photographer": "Nick Himmel",
+        "date": "9/03/2017",
+        "image": "https://s3.us-east-2.amazonaws.com/changing-new-york.herokuapp.com/aa10d490-c60c-012f-103f-58d385a7bc34.jpg",
+        "item_link": "http://nickhimmel.com/"
+    },
+    {
+        "uuid": "c4e84d40-c60c-012f-83bb-58d385a7bc34",
+        "title": "Mall, Battery Park City Esplanade, north of Liberty Street.",
+        "note": "Brookfield Place, also known as the World Financial Center, tables, umbrellas, and people in foreground.",
+        "photographer": "Nick Himmel",
+        "date": "9/02/2018",
+        "image": "https://s3.us-east-2.amazonaws.com/changing-new-york.herokuapp.com/c4e84d40-c60c-012f-83bb-58d385a7bc34.jpg",
+        "item_link": "http://nickhimmel.com/"
+    }
+]

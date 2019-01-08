@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { thenPhoto, findByUuid } from '../utils/helpers.js';
 
 export const startFetchPhotos = () => {
   return {
@@ -16,12 +17,21 @@ export const completeFetchPhotos = (data) => {
 export const fetchPhotos = (uuid) => {
   return (dispatch, getState) => {
     dispatch(startFetchPhotos());
-    axios.get(`https://changing-new-york-api.herokuapp.com/photos/${uuid}`)
-      .then(responce => {
-        dispatch(completeFetchPhotos(responce.data))
-      })
-      .catch(error => {
-        throw(error)
-      });
+    Promise.all([
+      axios.get(`/api/v1/items/${uuid}?withTitles=yes`),
+      axios.get(`/api/v1/mods/${uuid}`),
+      axios.get('http://localhost:3000/photos.json'),
+      axios.get('http://localhost:3000/comparisons.json')
+    ]).then (([items, mods, photos, comparisons]) => {
+      const photo = findByUuid(photos.data, uuid)[0];
+      const comparison = findByUuid(comparisons.data, uuid)[0];
+      dispatch(completeFetchPhotos([
+        thenPhoto(items, mods),
+        {now_photo: photo},
+        {comparison: comparison}
+      ]))
+    }).catch(error => {
+      console.log(error.message)
+    });
   };
 };
