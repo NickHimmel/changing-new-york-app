@@ -18,13 +18,16 @@ class Photos extends Component {
   }
 
   componentDidMount() {
-    axios.get('/api/v1/items/e3c8e2d0-c60c-012f-d813-58d385a7bc34?withTitles=yes')
-      .then(function (response) {
-        console.log(response.data.nyplAPI.response.capture[0]);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
+
+    Promise.all([
+      axios.get('/api/v1/items/c790af50-c60c-012f-2305-58d385a7bc34?withTitles=yes'),
+      axios.get('/api/v1/mods/c790af50-c60c-012f-2305-58d385a7bc34')
+    ]).then (([items, mod]) => {
+      console.log(items)
+      console.log(mod)
+    }).catch(error => {
+      console.log(error.message)
+    });
 
     this.props.fetchPhotos(this.state.uuid);
   }
