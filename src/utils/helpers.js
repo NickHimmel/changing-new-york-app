@@ -3,7 +3,7 @@ export const thenPhoto = (items, mods) => {
   const modsRoot = mods.data.nyplAPI.response.mods;
 
   return {
-    thenPhoto: {
+    then_photo: {
       uuid: itemsRoot.uuid,
       title: itemsRoot.title,
       note: getNote(modsRoot.note),
