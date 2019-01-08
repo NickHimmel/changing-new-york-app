@@ -7,6 +7,7 @@ import Photo from '../Photo/Photo.js';
 import Text from '../Text/Text.js';
 import Footnotes from '../Footnotes/Footnotes.js';
 import styles from './Photos.module.css';
+import { thenPhoto } from '../../utils/helpers.js'
 
 class Photos extends Component {
   constructor(props) {
@@ -20,11 +21,10 @@ class Photos extends Component {
   componentDidMount() {
 
     Promise.all([
-      axios.get('/api/v1/items/c790af50-c60c-012f-2305-58d385a7bc34?withTitles=yes'),
-      axios.get('/api/v1/mods/c790af50-c60c-012f-2305-58d385a7bc34')
-    ]).then (([items, mod]) => {
-      console.log(items)
-      console.log(mod)
+      axios.get('/api/v1/items/aee450e0-c60c-012f-2b4b-58d385a7bc34?withTitles=yes'),
+      axios.get('/api/v1/mods/aee450e0-c60c-012f-2b4b-58d385a7bc34')
+    ]).then (([items, mods]) => {
+      console.log(thenPhoto(items, mods));
     }).catch(error => {
       console.log(error.message)
     });
@@ -40,9 +40,6 @@ class Photos extends Component {
         ) : (
           <div className={styles.inner}>
             <Photo data={this.props.then_photo}/>
-            <Photo data={this.props.now_photo}/>
-            <Text data={this.props.comparison.text}/>
-            <Footnotes data={this.props.comparison.footnotes}/>
           </div>
         )}
       </div>
