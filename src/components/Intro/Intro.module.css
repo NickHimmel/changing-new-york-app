@@ -4,6 +4,16 @@
   margin: 100px 0;
 }
 
+.headline {
+  composes: headline from '../../base-styles/type.css';
+  border: 7px solid #db4839;
+  color: #db4839;
+  font-size: 52px;
+  padding: 35px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
 .inner {
   background-color: #fff;
   padding: 25px;

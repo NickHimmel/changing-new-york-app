@@ -4,7 +4,7 @@ import styles from './Intro.module.css';
 const Intro = () => {
   return (
     <div className={styles.container}>
-      <h1>Changing New York</h1>
+      <h1 className={styles.headline}>Changing<br/>New York</h1>
       <div className={styles.inner}>
         <p className={styles.header}>In 1935 the American photographer Berenice Abbott proposed to the Federal Art Project, an extension of the Works Project Administration, a series that would document a growing New York City. In 1939 the results were printed in a book titled “Changing New York.”  Her work would end up documenting the waning of an industrial New York as rapid technological change was pushing the city into the future. In the public domain, Berenice’s elegant, precise, and lively images have become a touchstone for photographers. Her historic record has created opportunity for a dialog about how New York has changed and where it is going.</p>
         <p className={styles.header}>Focusing on the Lower Manhattan waterfront and the Brooklyn Bridge Park area, this project uses the New York Public Library API to compare Berenice’s photos to photos I have taken this year and last.</p>
