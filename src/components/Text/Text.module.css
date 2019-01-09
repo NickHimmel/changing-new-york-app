@@ -1,5 +1,6 @@
 .title {
   composes: bold from '../../base-styles/type.css';
+  composes: serif from '../../base-styles/type.css';
   margin: 25px 0;
   text-align: center;
 }
@@ -11,9 +12,6 @@
 }
 
 .body {
-  margin: 18px 0;
-}
-
-.body, .title {
   composes: serif from '../../base-styles/type.css';
+  margin: 18px 0;
 }

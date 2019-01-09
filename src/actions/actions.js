@@ -20,8 +20,8 @@ export const fetchPhotos = (uuid) => {
     Promise.all([
       axios.get(`/api/v1/items/${uuid}?withTitles=yes`),
       axios.get(`/api/v1/mods/${uuid}`),
-      axios.get('http://localhost:3000/photos.json'),
-      axios.get('http://localhost:3000/comparisons.json')
+      axios.get('/photos.json'),
+      axios.get('/comparisons.json')
     ]).then (([items, mods, photos, comparisons]) => {
       const photo = findByUuid(photos.data, uuid)[0];
       const comparison = findByUuid(comparisons.data, uuid)[0];
