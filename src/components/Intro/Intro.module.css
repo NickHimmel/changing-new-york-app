@@ -1,14 +1,19 @@
 .container {
   grid-column: 4 / -4;
   z-index: 2;
-  margin: 100px 0;
+  margin-bottom: 100px;
 }
 
 .headline {
   composes: headline from '../../base-styles/type.css';
   border: 7px solid #db4839;
   color: #db4839;
+  font-family: century-gothic, sans-serif;
+  font-style: normal;
   font-size: 52px;
+  font-weight: 700;
+  margin-bottom: 30px;
+  margin-top: 100px;
   padding: 35px;
   text-align: center;
   text-transform: uppercase;
@@ -23,6 +28,7 @@
   composes: sansSerif from '../../base-styles/type.css';
   font-size: 22px;
   line-height: 30px;
+  margin-top: 0;
 }
 
 .line {
