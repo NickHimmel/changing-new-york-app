@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { fetchPhotos } from '../../actions/actions.js'
 import styles from './Map.module.css';
+import geojson from '../../data/new-york-locations.js'
 
 class Map extends Component {
   constructor(props) {
@@ -15,7 +16,7 @@ class Map extends Component {
   }
 
   componentDidMount() {
-
+    console.log(geojson.geojson.features);
     const mapContainer = document.getElementById('map');
     const MAPBOXGL = window.mapboxgl;
 
@@ -28,6 +29,15 @@ class Map extends Component {
       zoom: 13,
       interactive: false
     });
+
+    geojson.geojson.features.forEach(function(marker) {
+      const el = document.createElement('div');
+      el.cassName = 'marker';
+
+      new MAPBOXGL.Marker(el)
+        .setLngLat(marker.geometry.coordinates)
+        .addTo(map);
+    })
 
   }
 
