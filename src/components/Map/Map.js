@@ -15,17 +15,6 @@ class Map extends Component {
     }
   }
 
-  getFeatures = (e, map) => {
-    const features = map.queryRenderedFeatures(e.point, {
-      layers: ['changing-new-york']
-    });
-
-    this.setState({
-      features: features,
-      feature: features[0]
-    });
-  }
-
   componentDidMount() {
 
     const mapContainer = document.getElementById('map');
@@ -41,6 +30,23 @@ class Map extends Component {
       interactive: false
     });
 
+    const selectedFeature = (map, id) => {
+      map.setPaintProperty('changing-new-york', 'circle-color', ['case', ['==', ['id'], id], '#fff', '#000']);
+      map.setPaintProperty('changing-new-york', 'circle-stroke-width', ['case', ['==', ['id'], id], 3, 0]);
+      map.setPaintProperty('changing-new-york', 'circle-stroke-color', ['case', ['==', ['id'], id], '#db4839', '#000']);
+    }
+
+    const getFeatures = (e, map) => {
+      const features = map.queryRenderedFeatures(e.point, {
+        layers: ['changing-new-york']
+      });
+
+      this.setState({
+        features: features,
+        feature: features[0]
+      });
+    }
+
     map.on('load', function() {
       map.addSource('changing-new-york', {
         'type': 'geojson',
@@ -54,17 +60,16 @@ class Map extends Component {
         "source": 'changing-new-york',
         'type': 'circle'
       })
+
+      selectedFeature(map, 10)
     })
 
     map.on('click', (e) => {
 
-      this.getFeatures(e, map)
+      getFeatures(e, map)
 
       if (this.state.feature !== undefined) {
-        const featureId = this.state.feature.id;
-        map.setPaintProperty('changing-new-york', 'circle-color', ['case', ['==', ['id'], this.state.feature.id], '#fff', '#000']);
-        map.setPaintProperty('changing-new-york', 'circle-stroke-width', ['case', ['==', ['id'], this.state.feature.id], 3, 0]);
-        map.setPaintProperty('changing-new-york', 'circle-stroke-color', ['case', ['==', ['id'], this.state.feature.id], '#db4839', '#000']);
+        selectedFeature(map, this.state.feature.id)
       };
     })
   }
