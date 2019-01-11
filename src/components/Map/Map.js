@@ -60,6 +60,26 @@ class Map extends Component {
       activeFeature(map, 10)
     })
 
+    const popup = new MAPBOXGL.Popup({ offset: [0, -15] })
+
+    map.on('mousemove', (e) => {
+
+      map.getCanvas().style.cursor = 'pointer';
+
+      this.getFeatures(e, map)
+
+      if (!this.state.features.length) {
+        popup.remove();
+        return;
+      };
+
+      popup.setLngLat(this.state.feature.geometry.coordinates)
+        .setHTML('<p>' + this.state.feature.properties.title + '</p>')
+        .setLngLat(this.state.feature.geometry.coordinates)
+        .addTo(map)
+
+    });
+    
     map.on('click', (e) => {
       this.getFeatures(e, map)
 
