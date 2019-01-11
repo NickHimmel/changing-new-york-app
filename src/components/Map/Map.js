@@ -16,6 +16,10 @@ class Map extends Component {
     }
   }
 
+  handleClick = (uuid) => {
+    this.props.fetchPhotos(uuid);
+  }
+
   getFeatures = (e, map) => {
     const features = queryFeatures(e, map);
 
@@ -26,7 +30,6 @@ class Map extends Component {
   }
 
   componentDidMount() {
-
     const mapContainer = document.getElementById('map');
     const MAPBOXGL = window.mapboxgl;
 
@@ -50,7 +53,7 @@ class Map extends Component {
         'id': 'changing-new-york',
         'layout': {},
         'paint': {},
-        "source": 'changing-new-york',
+        'source': 'changing-new-york',
         'type': 'circle'
       })
 
@@ -58,11 +61,12 @@ class Map extends Component {
     })
 
     map.on('click', (e) => {
-
       this.getFeatures(e, map)
 
       if (this.state.feature !== undefined) {
+        console.log(this.state.feature.id)
         activeFeature(map, this.state.feature.id)
+        this.handleClick(this.state.feature.properties.UUID);
       };
     })
   }
