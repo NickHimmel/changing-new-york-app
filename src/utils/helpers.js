@@ -32,3 +32,15 @@ const formatDate = (date) => {
   const YEAR = date.slice(0, 4);
   return MONTH + "/" + DAY + "/" + YEAR;
 }
+
+export const activeFeature = (map, id) => {
+  map.setPaintProperty('changing-new-york', 'circle-color', ['case', ['==', ['id'], id], '#fff', '#000']);
+  map.setPaintProperty('changing-new-york', 'circle-stroke-width', ['case', ['==', ['id'], id], 3, 0]);
+  map.setPaintProperty('changing-new-york', 'circle-stroke-color', ['case', ['==', ['id'], id], '#db4839', '#000']);
+}
+
+export const queryFeatures = (e, map) => {
+   return map.queryRenderedFeatures(e.point, {
+    layers: ['changing-new-york']
+  });
+}

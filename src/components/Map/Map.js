@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { fetchPhotos } from '../../actions/actions.js';
 import geojson from '../../data/new-york-locations.js'
+import { activeFeature, queryFeatures } from '../../utils/helpers.js';
 import styles from './Map.module.css';
 
 class Map extends Component {
@@ -13,6 +14,15 @@ class Map extends Component {
       features: [],
       feature: {}
     }
+  }
+
+  getFeatures = (e, map) => {
+    const features = queryFeatures(e, map);
+
+    this.setState({
+      features: features,
+      feature: features[0]
+    });
   }
 
   componentDidMount() {
@@ -30,23 +40,6 @@ class Map extends Component {
       interactive: false
     });
 
-    const selectedFeature = (map, id) => {
-      map.setPaintProperty('changing-new-york', 'circle-color', ['case', ['==', ['id'], id], '#fff', '#000']);
-      map.setPaintProperty('changing-new-york', 'circle-stroke-width', ['case', ['==', ['id'], id], 3, 0]);
-      map.setPaintProperty('changing-new-york', 'circle-stroke-color', ['case', ['==', ['id'], id], '#db4839', '#000']);
-    }
-
-    const getFeatures = (e, map) => {
-      const features = map.queryRenderedFeatures(e.point, {
-        layers: ['changing-new-york']
-      });
-
-      this.setState({
-        features: features,
-        feature: features[0]
-      });
-    }
-
     map.on('load', function() {
       map.addSource('changing-new-york', {
         'type': 'geojson',
@@ -61,15 +54,15 @@ class Map extends Component {
         'type': 'circle'
       })
 
-      selectedFeature(map, 10)
+      activeFeature(map, 10)
     })
 
     map.on('click', (e) => {
 
-      getFeatures(e, map)
+      this.getFeatures(e, map)
 
       if (this.state.feature !== undefined) {
-        selectedFeature(map, this.state.feature.id)
+        activeFeature(map, this.state.feature.id)
       };
     })
   }
