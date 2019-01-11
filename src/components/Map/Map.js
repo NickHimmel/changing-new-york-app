@@ -15,6 +15,17 @@ class Map extends Component {
     }
   }
 
+  getFeatures = (e, map) => {
+    const features = map.queryRenderedFeatures(e.point, {
+      layers: ['changing-new-york']
+    });
+
+    this.setState({
+      features: features,
+      feature: features[0]
+    });
+  }
+
   componentDidMount() {
 
     const mapContainer = document.getElementById('map');
@@ -46,10 +57,15 @@ class Map extends Component {
     })
 
     map.on('click', (e) => {
-      const features = map.queryRenderedFeatures(e.point, {
-        layers: ['changing-new-york']
-      });
-      console.log(features[0].id)
+
+      this.getFeatures(e, map)
+
+      if (this.state.feature !== undefined) {
+        const featureId = this.state.feature.id;
+        map.setPaintProperty('changing-new-york', 'circle-color', ['case', ['==', ['id'], this.state.feature.id], '#fff', '#000']);
+        map.setPaintProperty('changing-new-york', 'circle-stroke-width', ['case', ['==', ['id'], this.state.feature.id], 3, 0]);
+        map.setPaintProperty('changing-new-york', 'circle-stroke-color', ['case', ['==', ['id'], this.state.feature.id], '#db4839', '#000']);
+      };
     })
   }
 
