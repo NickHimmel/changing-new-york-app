@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { fetchPhotos } from '../../actions/actions.js';
 import geojson from '../../data/new-york-locations.js'
-import { activeFeature, queryFeatures } from '../../utils/helpers.js';
 import styles from './Map.module.css';
 
 class Map extends Component {
@@ -12,7 +11,8 @@ class Map extends Component {
 
     this.state = {
       features: [],
-      feature: {}
+      feature: {},
+      id: 10
     }
   }
 
@@ -21,12 +21,27 @@ class Map extends Component {
   }
 
   getFeatures = (e, map) => {
-    const features = queryFeatures(e, map);
+    const features = map.queryRenderedFeatures(e.point, {
+       layers: ['changing-new-york']
+     });
 
     this.setState({
       features: features,
       feature: features[0]
     });
+  }
+
+  activeFeature = (map, id) => {
+    this.setState({
+      id: id
+    })
+
+    map.setPaintProperty('changing-new-york', 'circle-color', ['case', ['==', ['id'], this.state.id], '#db4839', '#000']);
+    map.setPaintProperty('changing-new-york', 'circle-radius', ['case', ['==', ['id'], this.state.id], 10, 5]);
+  }
+
+  inactiveFeature = (map) => {
+    map.setPaintProperty('changing-new-york', 'circle-color', ['case', ['!=', ['id'], this.state.id], '#000', '#000']);
   }
 
   componentDidMount() {
@@ -43,7 +58,7 @@ class Map extends Component {
       interactive: false
     });
 
-    map.on('load', function() {
+    map.on('load', () => {
       map.addSource('changing-new-york', {
         'type': 'geojson',
         'data': geojson.geojson
@@ -57,7 +72,7 @@ class Map extends Component {
         'type': 'circle'
       })
 
-      activeFeature(map, 10)
+      this.activeFeature(map, this.state.id)
     })
 
     const popup = new MAPBOXGL.Popup({ offset: [0, -15] })
@@ -72,20 +87,26 @@ class Map extends Component {
         popup.remove();
         return;
       };
-
+      this.activeFeature(map, this.state.feature.id)
       popup.setLngLat(this.state.feature.geometry.coordinates)
         .setHTML('<p>' + this.state.feature.properties.title + '</p>')
         .setLngLat(this.state.feature.geometry.coordinates)
         .addTo(map)
-
     });
-    
+    map.on('mouseleave', (e) => {
+      this.getFeatures(e, map)
+
+      if (this.state.feature !== undefined) {
+        this.inactiveFeature(map);
+      }
+    })
+
     map.on('click', (e) => {
       this.getFeatures(e, map)
 
       if (this.state.feature !== undefined) {
         console.log(this.state.feature.id)
-        activeFeature(map, this.state.feature.id)
+        this.activeFeature(map, this.state.feature.id)
         this.handleClick(this.state.feature.properties.UUID);
       };
     })
