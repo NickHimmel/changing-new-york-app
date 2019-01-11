@@ -4,20 +4,22 @@ export default {
     "features": [
       {
         "type": "Feature",
+        "id": 1,
         "properties": {
           "title": "Willow and Poplar Street,",
           "UUID": "aee450e0-c60c-012f-2b4b-58d385a7bc34"
         },
         "geometry": {
+          "type": "Point",
           "coordinates": [
             -73.993948,
             40.701382
-          ],
-          "type": "Point"
+          ]
         }
       },
       {
         "type": "Feature",
+        "id": 2,
         "properties": {
           "title": "Watuppa, Pier 5.",
           "UUID": "c790af50-c60c-012f-2305-58d385a7bc34"
@@ -32,6 +34,7 @@ export default {
       },
       {
         "type": "Feature",
+        "id": 3,
         "properties": {
           "title": "Warehouse, Water and Dock Streets.",
           "UUID": "a34e87b0-c60c-012f-6ea3-58d385a7bc34"
@@ -46,6 +49,7 @@ export default {
       },
       {
         "type": "Feature",
+        "id": 4,
         "properties": {
           "title": "Brooklyn Bridge, Water and Dock Streets.",
           "UUID": "ac519960-c60c-012f-c327-58d385a7bc34"
@@ -60,6 +64,7 @@ export default {
       },
       {
         "type": "Feature",
+        "id": 5,
         "properties": {
           "title": "Columbia Heights no. 222.",
           "UUID": "b2295550-c60c-012f-7451-58d385a7bc34"
@@ -74,6 +79,7 @@ export default {
       },
       {
         "type": "Feature",
+        "id": 6,
         "properties": {
           "title": "Brooklyn Bridge, Pier 21, Pennsylvania Railroad.",
           "UUID": "e167b920-c60c-012f-9050-58d385a7bc34"
@@ -88,6 +94,7 @@ export default {
       },
       {
         "type": "Feature",
+        "id": 7,
         "properties": {
           "title": "Rope store, Peerless Equipment Co., 189 South Street.",
           "UUID": "03e0c100-c60d-012f-6091-58d385a7bc34"
@@ -102,6 +109,7 @@ export default {
       },
       {
         "type": "Feature",
+        "id": 8,
         "properties": {
           "title": "Shelter on the water front, Coenties slip, Pier 5.",
           "UUID": "0bc0ef10-c60d-012f-02a5-58d385a7bc34"
@@ -116,6 +124,7 @@ export default {
       },
       {
         "type": "Feature",
+        "id": 9,
         "properties": {
           "title": "Fulton Street Fish Market.",
           "UUID": "b4602130-c60c-012f-3b0b-58d385a7bc34"
@@ -130,6 +139,7 @@ export default {
       },
       {
         "type": "Feature",
+        "id": 10,
         "properties": {
           "title": "Oyster Houses, South Street and Pike Slip.",
           "UUID": "e3c8e2d0-c60c-012f-d813-58d385a7bc34"
@@ -144,6 +154,7 @@ export default {
       },
       {
         "type": "Feature",
+        "id": 11,
         "properties": {
           "title": "Downtown Skyport, Pier 11, East River.",
           "UUID": "c637cf10-c60c-012f-480c-58d385a7bc34"
@@ -158,6 +169,7 @@ export default {
       },
       {
         "type": "Feature",
+        "id": 12,
         "properties": {
           "title": "Manhattan Skyline: I. South Street and Jones Lane.",
           "UUID": "9c9a3720-c60c-012f-bd88-58d385a7bc34"
@@ -172,6 +184,7 @@ export default {
       },
       {
         "type": "Feature",
+        "id": 13,
         "properties": {
           "title": "Firehouse, Battery.",
           "UUID": "ae6c9620-c60c-012f-8c20-58d385a7bc34"
@@ -186,6 +199,7 @@ export default {
       },
       {
         "type": "Feature",
+        "id": 14,
         "properties": {
           "title": "Pier 13, North River.",
           "UUID": "aa10d490-c60c-012f-103f-58d385a7bc34"
@@ -200,6 +214,7 @@ export default {
       },
       {
         "type": "Feature",
+        "id": 15,
         "properties": {
           "title": "Ferry, West Street, foot of Liberty Street.",
           "UUID": "c4e84d40-c60c-012f-83bb-58d385a7bc34"
