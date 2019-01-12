@@ -1,5 +1,14 @@
 .container {
-  width: 100%;
   min-height: 100%;
   position: absolute;
+  width: 100%;
+}
+
+.credits {
+  background-color: #fff;
+  left: 90%;
+  padding: 2px;
+  position: absolute;
+  top: 50%;
+  z-index: 2;
 }

@@ -115,7 +115,9 @@ class Map extends Component {
   render() {
     return (
       <div id='map' className={styles.container}>
-        <a href='https://blog.mapbox.com/designing-north-star-c8574e299c94'>Design North Star</a>
+        <div className={styles.credits}>
+          <a href='https://blog.mapbox.com/designing-north-star-c8574e299c94'>Design North Star</a>
+        </div>
       </div>
     );
   }

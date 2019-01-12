@@ -13,6 +13,10 @@
   margin: 0;
 }
 
+.mapboxgl-popup-anchor-right .mapboxgl-popup-tip {
+  border-left-color: #000;
+}
+
 .mapboxgl-popup-anchor-bottom .mapboxgl-popup-tip {
   border-top-color: #000;
 }
