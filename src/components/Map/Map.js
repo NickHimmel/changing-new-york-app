@@ -93,6 +93,7 @@ class Map extends Component {
         .setLngLat(this.state.feature.geometry.coordinates)
         .addTo(map)
     });
+
     map.on('mouseleave', (e) => {
       this.getFeatures(e, map)
 
@@ -105,7 +106,6 @@ class Map extends Component {
       this.getFeatures(e, map)
 
       if (this.state.feature !== undefined) {
-        console.log(this.state.feature.id)
         this.activeFeature(map, this.state.feature.id)
         this.handleClick(this.state.feature.properties.UUID);
       };
