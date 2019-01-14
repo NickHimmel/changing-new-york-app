@@ -42,3 +42,15 @@
   font-size: 19px;
   line-height: 28px;
 }
+
+.pointer {
+  color: #db4839;
+  font-size: 25px;
+}
+
+.instructions {
+  composes: serif from '../../base-styles/type.css';
+  font-size: 19px;
+  font-style: italic;
+  line-height: 28px;
+}
