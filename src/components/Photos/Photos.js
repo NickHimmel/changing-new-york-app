@@ -24,9 +24,8 @@ class Photos extends Component {
   render() {
     return (
       <div className={styles.container}>
-      <Loading />
         {this.props.isFetching || this.props.isFetching === undefined ? (
-          <h1>Loading...</h1>
+          <Loading />
         ) : (
           <div className={styles.inner}>
             <Photo data={this.props.then_photo}/>
