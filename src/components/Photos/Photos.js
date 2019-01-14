@@ -5,6 +5,7 @@ import { fetchPhotos } from '../../actions/actions.js'
 import Photo from '../Photo/Photo.js';
 import Text from '../Text/Text.js';
 import Footnotes from '../Footnotes/Footnotes.js';
+import Loading from '../Loading/Loading.js'
 import styles from './Photos.module.css';
 
 class Photos extends Component {
@@ -24,7 +25,7 @@ class Photos extends Component {
     return (
       <div className={styles.container}>
         {this.props.isFetching || this.props.isFetching === undefined ? (
-          <h1>Loading...</h1>
+          <Loading />
         ) : (
           <div className={styles.inner}>
             <Photo data={this.props.then_photo}/>

@@ -23,7 +23,8 @@ export const findByUuid = (items, uuid) => {
 
 const getNote = (notes) => {
   const getNotes = notes.map(note => note.$)
-  return getNotes.reduce((a, b) => {return a.length > b.length ?  a : b});
+  const note = getNotes.reduce((a, b) => {return a.length > b.length ?  a : b});
+  return note ? note : "";
 }
 
 const formatDate = (date) => {

@@ -1,14 +1,3 @@
-a {
-  font-family: 'Alegreya Sans', sans-serif;
-  color: #000;
-  text-decoration: none;
-  border-bottom: 1px solid #db4839;
-}
-
-a:hover {
-  color: #db4839;
-}
-
 .container {
   composes: twelveColumnGrid from './base-styles/layout.css';
 }

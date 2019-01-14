@@ -29,8 +29,8 @@ class Map extends Component {
     const map = new MAPBOXGL.Map({
       container: mapContainer,
       style: 'mapbox://styles/nickhimmel/cjqrif8l61xis2qn4zemgwtx4',
-      center: [-74.025, 40.69],
-      zoom: 13.25,
+      center: [-74.024, 40.71],
+      zoom: 13.3,
       interactive: false
     });
 
@@ -65,6 +65,7 @@ class Map extends Component {
         .setLngLat(marker.geometry.coordinates)
         .addTo(map);
     });
+
   }
 
   render() {
