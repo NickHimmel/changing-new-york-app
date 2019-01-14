@@ -5,6 +5,7 @@
 .headline {
   composes: headline from '../../base-styles/type.css';
   display: inline-block;
+  letter-spacing: 3;
 }
 
 .loader {
