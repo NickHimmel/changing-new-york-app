@@ -1,7 +1,7 @@
 .container {
   grid-column: 2 / span 5;
   z-index: 1;
-  min-height: 2500px;
+  min-height: 1750px;
 }
 
 .inner {
