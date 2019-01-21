@@ -4,8 +4,7 @@ import './base-styles/global.css'
 import styles from './App.module.css';
 import Intro from './components/Intro/Intro.js'
 import Map from './components/Map/Map.js';
-import Photos from './components/Photos/Photos.js';
-
+import Comparisons from './components/Comparisons/Comparisons.js';
 
 require('dotenv').config();
 
@@ -14,7 +13,7 @@ const App = () => {
     <div className={styles.container}>
       <Intro />
       <Map />
-      <Photos />
+      <Comparisons />
     </div>
   );
 }

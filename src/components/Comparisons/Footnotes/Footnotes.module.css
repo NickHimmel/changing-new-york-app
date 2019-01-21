@@ -1,5 +1,5 @@
 .container {
-  composes: flexSpaceAround from '../../base-styles/layout.css';
+  composes: flexSpaceAround from '../../../base-styles/layout.css';
 }
 
 .toolTip {
@@ -8,8 +8,8 @@
 }
 
 .toolTipText {
-  composes: sansSerif from '../../base-styles/type.css';
-  composes: captions from '../../base-styles/type.css';
+  composes: sansSerif from '../../../base-styles/type.css';
+  composes: captions from '../../../base-styles/type.css';
   background-color: #000;
   border-radius: 6px;
   bottom: 125%;

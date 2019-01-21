@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { fetchPhotos } from '../../actions/actions.js'
+import { fetchPhotos } from '../../../actions/actions.js'
 import Photo from '../Photo/Photo.js';
 import Text from '../Text/Text.js';
 import Footnotes from '../Footnotes/Footnotes.js';
-import Loading from '../Loading/Loading.js'
-import styles from './Photos.module.css';
+import Loading from '../../Loading/Loading.js'
+import styles from './Inner.module.css';
 
-class Photos extends Component {
+class Inner extends Component {
   constructor(props) {
-    super (props);
+    super(props);
 
     this.state = {
       uuid: 'e3c8e2d0-c60c-012f-d813-58d385a7bc34'
@@ -35,7 +35,7 @@ class Photos extends Component {
           </div>
         )}
       </div>
-    )
+    );
   }
 }
 
@@ -58,4 +58,4 @@ const mapDispatchToProps = dispatch => bindActionCreators (
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Photos);
+)(Inner);
