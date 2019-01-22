@@ -1,0 +1,16 @@
+.button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  left: 93%;
+  position: absolute;
+  top: 5px;
+}
+
+.button:focus {
+  outline: 0;
+}
+
+.button:hover path {
+  fill: #db4839;
+}

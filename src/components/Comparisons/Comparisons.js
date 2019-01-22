@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { fetchPhotos } from '../../actions/actions.js'
+import { fetchPhotos } from '../../actions/actions.js';
+import Button from './Button/Button.js';
 import Photo from './Photo/Photo.js';
 import Text from './Text/Text.js';
 import Footnotes from './Footnotes/Footnotes.js';
 import Loading from '../Loading/Loading.js'
 import styles from './Comparisons.module.css';
-import logo from '../../logos/baseline-close-24px.svg';
 
 class Comparisons extends Component {
   constructor(props) {
@@ -40,7 +40,7 @@ class Comparisons extends Component {
     console.log(this.props.uuid)
     return (
       <div className={styles.inner}>
-        <button className={styles.button} onClick={this.handleClick}><img src={logo} alt="logo"/></button>
+        <Button onClick={this.handleClick}/>
         <Photo data={this.props.then_photo}/>
         <Photo data={this.props.now_photo}/>
         <Text data={this.props.comparison.text}/>
