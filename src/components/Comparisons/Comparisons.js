@@ -37,7 +37,6 @@ class Comparisons extends Component {
         <Loading />
       );
     }
-    console.log(this.props.uuid)
     return (
       <div className={styles.inner}>
         <Button onClick={this.handleClick}/>

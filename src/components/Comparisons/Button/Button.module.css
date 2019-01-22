@@ -3,8 +3,9 @@
   border: none;
   cursor: pointer;
   left: 93%;
+  padding: 0;
   position: absolute;
-  top: 5px;
+  top: 15px;
 }
 
 .button:focus {

@@ -57,9 +57,10 @@ class Map extends Component {
 
       el.addEventListener('click', () => {
         const active = document.getElementById("active");
-        {active &&
+
+        active &&
           active.removeAttribute("id");
-        }
+
         el.setAttribute("id", "active");
         this.handleClick(marker.properties.UUID)
       });
