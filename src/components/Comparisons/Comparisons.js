@@ -50,6 +50,7 @@ class Comparisons extends Component {
   }
 
   handleClick = () => {
+    document.getElementById("active").removeAttribute("id");
     this.setState(state => ({
       open: false
     }))
