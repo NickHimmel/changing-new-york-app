@@ -7,6 +7,7 @@ import Text from './Text/Text.js';
 import Footnotes from './Footnotes/Footnotes.js';
 import Loading from '../Loading/Loading.js'
 import styles from './Comparisons.module.css';
+import logo from '../../logos/baseline-close-24px.svg';
 
 class Comparisons extends Component {
   constructor(props) {
@@ -22,23 +23,36 @@ class Comparisons extends Component {
     this.props.fetchPhotos(this.state.uuid);
   }
 
-  renderComparisons = () => {
+  componentDidUpdate(prevProps) {
+    if (this.props.uuid !== prevProps.uuid) {
+      this.setState(state => ({
+        open: true
+      }))
+    };
+  }
 
+  renderComparisons = () => {
     if (this.props.isFetching || this.props.isFetching === undefined) {
       return (
         <Loading />
-      )
+      );
     }
-
+    console.log(this.props.uuid)
     return (
       <div className={styles.inner}>
+        <button className={styles.button} onClick={this.handleClick}><img src={logo} alt="logo"/></button>
         <Photo data={this.props.then_photo}/>
         <Photo data={this.props.now_photo}/>
         <Text data={this.props.comparison.text}/>
         <Footnotes data={this.props.comparison.footnotes}/>
       </div>
-    )
+    );
+  }
 
+  handleClick = () => {
+    this.setState(state => ({
+      open: false
+    }))
   }
 
   render() {
@@ -59,7 +73,8 @@ const mapStateToProps = (state) => {
     isFetching: state.photos.isFetching,
     then_photo: state.photos.then_photo,
     now_photo: state.photos.now_photo,
-    comparison: state.photos.comparison
+    comparison: state.photos.comparison,
+    uuid: state.photos.uuid
   };
 };
 

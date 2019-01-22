@@ -2,9 +2,21 @@
   grid-column: 2 / span 5;
   z-index: 1;
   min-height: 1750px;
+
 }
 
 .inner {
   background-color: #fff;
-  padding: 25px;
+  padding: 50px 25px;
+  position: relative;
+}
+
+.button {
+  composes: serif from '../../base-styles/type.css';
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  left: 93%;
+  position: absolute;
+  top: 5px;
 }
