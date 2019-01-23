@@ -9,6 +9,7 @@
 
 .image {
   max-height: 325px;
+  max-width: 100%;
 }
 
 .title {

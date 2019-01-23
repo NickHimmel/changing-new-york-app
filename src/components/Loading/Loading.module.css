@@ -3,8 +3,14 @@
 }
 
 .headline {
-  composes: headline from '../../base-styles/type.css';
+  composes: centuryGothic from '../../base-styles/type.css';
+  color: #db4839;
+  font-style: normal;
+  font-size: 52px;
+  font-weight: 700;
   display: inline-block;
+  text-align: center;
+  text-transform: uppercase;
 }
 
 .loader {
