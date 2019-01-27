@@ -13,3 +13,16 @@
   display: flex;
   justify-content: space-around;
 }
+
+.gridDesktop {
+  grid-column: 4 / -4;
+}
+
+.headlineDesktop {
+  font-style: normal;
+  font-size: 52px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-align: center;
+  text-transform: uppercase;
+}

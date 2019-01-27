@@ -1,22 +1,17 @@
 .container {
-  grid-column: 4 / -4;
+  composes: gridDesktop from '../../base-styles/layout.css';
   z-index: 2;
   margin-bottom: 100px;
 }
 
 .headline {
   composes: centuryGothic from '../../base-styles/type.css';
+  composes: headlineDesktop from '../../base-styles/layout.css';
+  composes: red from '../../base-styles/color.css';
   border: 7px solid #db4839;
-  color: #db4839;
-  font-style: normal;
-  font-size: 52px;
-  font-weight: 700;
-  letter-spacing: 3px;
   margin-bottom: 30px;
   margin-top: 100px;
   padding: 35px;
-  text-align: center;
-  text-transform: uppercase;
 }
 
 .inner {
