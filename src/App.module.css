@@ -1,3 +1,0 @@
-.container {
-  composes: twelveColumnGrid from './base-styles/layout.css';
-}
