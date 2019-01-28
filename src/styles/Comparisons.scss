@@ -1,0 +1,29 @@
+.comparisons {
+  grid-column: 2 / span 5;
+  min-height: 1750px;
+  z-index: 1;
+
+  &__inner {
+    background-color: $white;
+    padding: 50px 25px;
+    position: relative;
+
+    .button {
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      left: 93%;
+      padding: 0;
+      position: absolute;
+      top: 15px;
+    }
+
+    .button:focus {
+      outline: 0;
+    }
+
+    .button:hover path {
+      fill: #db4839;
+    }
+  }
+}
