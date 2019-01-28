@@ -51,7 +51,7 @@ class Comparisons extends Component {
     const isOpen = this.state.open;
 
     return (
-      <div className="comparisons__inner">
+      <div className="comparisons">
         {isOpen &&
           this.renderComparisons()
         }
