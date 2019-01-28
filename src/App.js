@@ -1,8 +1,8 @@
 import React from 'react';
 import 'normalize.css';
-import './base-styles/global.css'
-import styles from './App.scss';
-import Intro from './components/Intro/Intro.js'
+import './base-styles/global.css';
+import './App.scss';
+import Intro from './components/Intro.js';
 import Map from './components/Map/Map.js';
 import Comparisons from './components/Comparisons/Comparisons.js';
 

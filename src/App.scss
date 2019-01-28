@@ -1,3 +1,6 @@
+@import './styles/variables.scss';
+@import './styles/Intro.scss';
+
 .app {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
