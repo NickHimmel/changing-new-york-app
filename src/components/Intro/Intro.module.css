@@ -1,5 +1,6 @@
 .container {
   composes: gridDesktop from '../../base-styles/layout.css';
+  composes: gridMobile from '../../base-styles/layout.css';
   z-index: 2;
   margin-bottom: 100px;
 }

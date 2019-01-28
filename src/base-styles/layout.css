@@ -26,3 +26,11 @@
   text-align: center;
   text-transform: uppercase;
 }
+
+@media only screen and (max-width: 760px) {
+
+  .gridMobile {
+    grid-column: 2 / -2;
+  }
+
+}
