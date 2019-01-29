@@ -25,5 +25,134 @@
     .button:hover path {
       fill: #db4839;
     }
+
+    .photo {
+      margin-bottom: 25px;
+
+      a {
+        color: $grey;
+        font-family: $font-sans-serif;
+        font-size: 12px;
+        line-height: 19px;
+        margin-left: 5px;
+        text-decoration: none;
+        border-bottom: 1px solid $red;
+      }
+
+      a:hover {
+        color: $red;
+      }
+
+      h2 {
+        color: $grey;
+        font-family: $font-serif;
+        font-size: 12px;
+        line-height: 19px;
+        margin: 1px 0;
+
+        .note {
+          font-weight: 400;
+        }
+      }
+
+      h3 {
+        color: $grey;
+        display: inline;
+        font-family: $font-sans-serif;
+        font-size: 12px;
+        font-weight: 600;
+        text-transform: uppercase;
+
+        .date {
+          font-weight: 400px;
+        }
+      }
+
+      &__inner {
+
+        display: flex;
+        justify-content: center;
+
+        a {
+          border-bottom: 0;
+        }
+
+        img {
+          max-height: 325px;
+          max-width: 100%;
+        }
+      }
+    }
+
+    .text {
+
+      h2 {
+        font-family: $font-serif;
+        font-weight: 600;
+        margin: 25px 0;
+        text-align: center;
+      }
+
+      p {
+        font-family: $font-serif;
+        margin: 18px 0;
+      }
+
+      .line {
+        border-top: 1px solid $red;
+        margin: 25px auto;
+        width: 30px;
+      }
+    }
+
+    .footnotes {
+      display: flex;
+      justify-content: space-around;
+
+      .toolTip {
+        display: inline-block;
+        position: relative;
+      }
+
+      .toolTipText {
+        background-color: #000;
+        border-radius: 6px;
+        bottom: 125%;
+        color: #fff;
+        font-family: $font-sans-serif;
+        font-size: 12px;
+        left: 50%;
+        line-height: 19px;
+        margin-left: -162px;
+        padding: 10px;
+        position: absolute;
+        opacity: 0;
+        text-align: center;
+        transition: opacity 0.3s;
+        visibility: hidden;
+        width: 300px;
+        z-index: 1;
+      }
+
+      .toolTipText::after {
+        border-width: 5px;
+        border-style: solid;
+        border-color: #000 transparent transparent transparent;
+        content: "";
+        left: 50%;
+        margin-left: -5px;
+        position: absolute;
+        top: 100%;
+      }
+
+      .toolTip:hover .toolTipText {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .footnoteLink {
+        margin-right: 3px;
+      }
+    }
   }
 }

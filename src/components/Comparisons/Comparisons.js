@@ -3,7 +3,10 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { fetchPhotos } from '../../actions/actions.js';
 import Button from './Button.js';
-import Loading from '../Loading.js'
+import Loading from '../Loading.js';
+import Photo from './Photo.js';
+import Text from './Text.js';
+import Footnotes from './Footnotes.js';
 
 class Comparisons extends Component {
   constructor(props) {
@@ -36,6 +39,10 @@ class Comparisons extends Component {
     return (
       <div className="comparisons__inner">
         <Button onClick={this.handleClick}/>
+        <Photo data={this.props.then_photo}/>
+        <Photo data={this.props.now_photo}/>
+        <Text data={this.props.comparison.text}/>
+        <Footnotes data={this.props.comparison.footnotes}/>
       </div>
     );
   }
