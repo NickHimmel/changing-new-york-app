@@ -3,7 +3,7 @@
   color: $red;
   display: flex;
   font-family: $century-gothic;
-  font-size: 30px;
+  font-size: 16px;
   font-style: normal;
   font-weight: $bold;
   justify-content: center;
@@ -18,14 +18,14 @@
 
 .loader {
   animation: spin 1.3s linear infinite;
-  border: 8px solid $light-grey;
-  border-top: 8px solid $red;
+  border: 5px solid $light-grey;
+  border-top: 5px solid $red;
   border-radius: 50%;
   display: inline-block;
-  height: 40px;
+  height: 25px;
   margin-left: 20px;
   text-align: center;
-  width: 40px;
+  width: 25px;
 }
 
 @keyframes spin {

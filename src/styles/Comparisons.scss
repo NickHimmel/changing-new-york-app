@@ -1,12 +1,14 @@
 .comparisons {
   grid-column: 2 / span 5;
-  min-height: 1750px;
+  margin-bottom: 50px;
+  min-height: 2000px;
   z-index: 1;
 
   &__inner {
     background-color: $white;
     padding: 50px 25px;
     position: relative;
+    top: 0;
 
     .button {
       background-color: transparent;
@@ -16,31 +18,35 @@
       padding: 0;
       position: absolute;
       top: 15px;
-    }
 
-    .button:focus {
-      outline: 0;
-    }
+      &:focus {
+        outline: 0;
+      }
 
-    .button:hover path {
-      fill: #db4839;
+      &:hover path {
+        fill: $red;
+      }
     }
 
     .photo {
+      display: flex;
+      justify-content: center;
+
+      a {
+        border-bottom: 0;
+      }
+
+      img {
+        max-height: 325px;
+        max-width: 100%;
+      }
+    }
+
+    .caption {
       margin-bottom: 25px;
 
       a {
-        color: $grey;
-        font-family: $font-sans-serif;
-        font-size: 12px;
-        line-height: 19px;
         margin-left: 5px;
-        text-decoration: none;
-        border-bottom: 1px solid $red;
-      }
-
-      a:hover {
-        color: $red;
       }
 
       h2 {
@@ -67,21 +73,6 @@
           font-weight: 400px;
         }
       }
-
-      &__inner {
-
-        display: flex;
-        justify-content: center;
-
-        a {
-          border-bottom: 0;
-        }
-
-        img {
-          max-height: 325px;
-          max-width: 100%;
-        }
-      }
     }
 
     .text {
@@ -106,52 +97,134 @@
     }
 
     .footnotes {
-      display: flex;
-      justify-content: space-around;
 
-      .toolTip {
-        display: inline-block;
-        position: relative;
-      }
-
-      .toolTipText {
-        background-color: #000;
-        border-radius: 6px;
-        bottom: 125%;
-        color: #fff;
+      button {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        display: none;
         font-family: $font-sans-serif;
-        font-size: 12px;
-        left: 50%;
-        line-height: 19px;
-        margin-left: -162px;
-        padding: 10px;
-        position: absolute;
-        opacity: 0;
-        text-align: center;
-        transition: opacity 0.3s;
-        visibility: hidden;
-        width: 300px;
-        z-index: 1;
+        margin-left: auto;
+        padding: 0;
       }
 
-      .toolTipText::after {
-        border-width: 5px;
-        border-style: solid;
-        border-color: #000 transparent transparent transparent;
-        content: "";
-        left: 50%;
-        margin-left: -5px;
-        position: absolute;
-        top: 100%;
+      ul {
+        display: flex;
+        justify-content: space-around;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+
+        .tooltip {
+          display: inline-block;
+          position: relative;
+
+          .tooltip-text {
+            background-color: #000;
+            border-radius: 6px;
+            bottom: 125%;
+            color: $white;
+            font-family: $font-sans-serif;
+            font-size: 12px;
+            left: 50%;
+            line-height: 19px;
+            margin-left: -85px;
+            padding: 10px;
+            position: absolute;
+            opacity: 0;
+            text-align: center;
+            transition: opacity 0.3s;
+            visibility: hidden;
+            width: 150px;
+            z-index: 1;
+
+            &::after {
+              border-width: 5px;
+              border-style: solid;
+              border-color: #000 transparent transparent transparent;
+              content: "";
+              left: 50%;
+              margin-left: -5px;
+              position: absolute;
+              top: 100%;
+            }
+          }
+
+          &:hover .tooltip-text {
+            opacity: 1;
+            visibility: visible;
+          }
+        }
+
+        .footnotes__mobile{
+          display: none;
+        }
+
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+
+  .comparisons {
+    grid-column: 2 / -2;
+
+    &__inner {
+
+      .footnotes {
+      display: block;
+
+      button {
+        display: block;
+
+        &:focus {
+          outline: 0;
+        }
+
+        &:hover {
+          color: $red;
+        }
       }
 
-      .toolTip:hover .toolTipText {
-        opacity: 1;
-        visibility: visible;
+      ul {
+        display: block;
+
+        .tooltip {
+          display: none;
+        }
+
+        .footnotes__mobile{
+          display: inline-block;
+          margin: 15px 0;
+        }
+
+        .footnotes-site {
+          border-bottom: 0;
+          color: $grey;
+          font-family: $font-sans-serif;
+          font-size: 12px;
+          line-height: 19px;
+          margin-left: 5px;
+        }
       }
 
-      .footnoteLink {
-        margin-right: 3px;
+      .visible {
+        display: none;
+      }
+    }
+    }
+  }
+
+}
+
+@media only screen and (max-width: 600px) {
+
+  .comparisons {
+    .photo {
+      img {
+        height: 100%;
+        width: 100%;
       }
     }
   }
