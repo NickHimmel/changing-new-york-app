@@ -9,7 +9,8 @@ export const photoReducer = (state = [], action) => {
         isFetching: false,
         then_photo: action.data[0].then_photo,
         now_photo: action.data[1].now_photo,
-        comparison: action.data[2].comparison
+        comparison: action.data[2].comparison,
+        uuid: action.data[3].uuid
       };
     default:
       return state;

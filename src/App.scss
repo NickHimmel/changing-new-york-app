@@ -1,0 +1,45 @@
+@import './styles/variables.scss';
+@import './styles/map.scss';
+@import './styles/Intro.scss';
+@import './styles/Loading.scss';
+@import './styles/Comparisons.scss';
+
+body {
+  box-sizing: border-box;
+}
+
+#active {
+  background-color: #db4839;
+  width: 20px;
+  height: 20px;
+}
+
+.app {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  position: relative;
+}
+
+.link {
+  font-family: 'Alegreya Sans', sans-serif;
+  color: #000;
+  text-decoration: none;
+  border-bottom: 1px solid #db4839;
+
+  &:hover {
+    color: #db4839;
+  }
+}
+
+.link-grey {
+  color: $grey;
+  font-family: $font-sans-serif;
+  font-size: 12px;
+  line-height: 19px;
+  text-decoration: none;
+  border-bottom: 1px solid $red;
+
+  &:hover {
+    color: $red;
+  }
+}

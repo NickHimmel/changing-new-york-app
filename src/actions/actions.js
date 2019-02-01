@@ -28,7 +28,8 @@ export const fetchPhotos = (uuid) => {
       dispatch(completeFetchPhotos([
         thenPhoto(items, mods),
         {now_photo: photo},
-        {comparison: comparison}
+        {comparison: comparison},
+        {uuid: uuid}
       ]))
     }).catch(error => {
       console.log(error.message)

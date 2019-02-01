@@ -1,12 +1,5 @@
-.headline {
-  color: #db4839;
+.centuryGothic {
   font-family: century-gothic, sans-serif;
-  font-style: normal;
-  font-size: 52px;
-  font-weight: 700;
-  letter-spacing: 3px;
-  text-align: center;
-  text-transform: uppercase;
 }
 
 .sansSerif {

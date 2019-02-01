@@ -1,0 +1,34 @@
+.loading {
+  align-items: center;
+  color: $red;
+  display: flex;
+  font-family: $century-gothic;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: $bold;
+  justify-content: center;
+  letter-spacing: 3px;
+  text-align: center;
+  text-transform: uppercase;
+
+  h1 {
+    margin: 0;
+  }
+}
+
+.loader {
+  animation: spin 1.3s linear infinite;
+  border: 5px solid $light-grey;
+  border-top: 5px solid $red;
+  border-radius: 50%;
+  display: inline-block;
+  height: 25px;
+  margin-left: 20px;
+  text-align: center;
+  width: 25px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
