@@ -1,4 +1,5 @@
 @import './styles/variables.scss';
+@import './styles/map.scss';
 @import './styles/Intro.scss';
 @import './styles/Loading.scss';
 @import './styles/Comparisons.scss';
@@ -41,42 +42,4 @@ body {
   &:hover {
     color: $red;
   }
-}
-
-.mapboxgl-popup-content {
-  background-color: #000;
-  border-radius: 0;
-  color: #fff;
-  font-family: 'Alegreya Sans', sans-serif;
-  font-size: 16px;
-  padding: 15px;
-  text-align: center;
-  width: 150px;
-}
-
-.mapboxgl-popup-content p {
-  margin: 0;
-}
-
-.mapboxgl-popup-anchor-right .mapboxgl-popup-tip {
-  border-left-color: #000;
-}
-
-.mapboxgl-popup-anchor-bottom .mapboxgl-popup-tip {
-  border-top-color: #000;
-}
-
-.marker {
-  background-color: #000;
-  background-size: cover;
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
-  cursor: pointer;
-}
-
-.marker:hover {
-  background-color: #db4839;
-  width: 20px;
-  height: 20px;
 }

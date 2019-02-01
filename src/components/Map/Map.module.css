@@ -3,12 +3,3 @@
   position: absolute;
   width: 100%;
 }
-
-.credits {
-  background-color: #fff;
-  left: 90%;
-  padding: 2px;
-  position: absolute;
-  top: 60%;
-  z-index: 2;
-}

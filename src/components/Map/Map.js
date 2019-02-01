@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { fetchPhotos } from '../../actions/actions.js';
 import geojson from '../../data/new-york-locations.js'
-import styles from './Map.module.css';
 
 class Map extends Component {
   constructor(props) {
@@ -74,9 +73,9 @@ class Map extends Component {
 
   render() {
     return (
-      <div id='map' className={styles.container}>
-        <div className={styles.credits}>
-          <a href='https://blog.mapbox.com/designing-north-star-c8574e299c94'>Design North Star</a>
+      <div id='map' className='map'>
+        <div className='map-credits'>
+          <a className='link' href='https://blog.mapbox.com/designing-north-star-c8574e299c94'>Design North Star</a>
         </div>
       </div>
     );
