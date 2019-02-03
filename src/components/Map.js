@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { fetchPhotos } from '../../actions/actions.js';
-import geojson from '../../data/new-york-locations.js'
+import { fetchPhotos } from '../actions/actions.js';
+import geojson from '../data/new-york-locations.js'
 
 class Map extends Component {
   constructor(props) {
