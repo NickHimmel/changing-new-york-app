@@ -9,7 +9,7 @@ import Caption from './Caption.js';
 import Text from './Text.js';
 import Footnotes from './Footnotes.js';
 
-class Comparisons extends Component {
+class Comparison extends Component {
   constructor(props) {
     super(props);
 
@@ -31,14 +31,14 @@ class Comparisons extends Component {
     };
   }
 
-  renderComparisons = () => {
+  renderComparison = () => {
     if (this.props.isFetching || this.props.isFetching === undefined) {
       return (
         <Loading />
       );
     }
     return (
-      <div className="comparisons__inner">
+      <div className='comparison__inner'>
         <Button onClick={this.handleClick}/>
         <Photo data={this.props.then_photo}/>
         <Caption data={this.props.then_photo}/>
@@ -51,7 +51,6 @@ class Comparisons extends Component {
   }
 
   handleClick = () => {
-    document.getElementById("active").removeAttribute("id");
     this.setState(state => ({
       open: false
     }))
@@ -61,9 +60,9 @@ class Comparisons extends Component {
     const isOpen = this.state.open;
 
     return (
-      <div className="comparisons">
+      <div className='comparison'>
         {isOpen &&
-          this.renderComparisons()
+          (<div>{this.renderComparison()}</div>)
         }
       </div>
     );
@@ -90,4 +89,4 @@ const mapDispatchToProps = dispatch => bindActionCreators (
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Comparisons);
+)(Comparison);

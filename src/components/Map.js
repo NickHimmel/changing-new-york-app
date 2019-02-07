@@ -8,7 +8,11 @@ class Map extends Component {
   constructor(props) {
     super (props);
 
-    this.state = {id: 10}
+    this.state = {
+      id: 10,
+      style: 'mapbox://styles/nickhimmel/cjqrif8l61xis2qn4zemgwtx4',
+      interactive: false,
+    }
   }
 
   handleClick = (uuid) => {
@@ -16,21 +20,18 @@ class Map extends Component {
   }
 
   componentDidMount() {
-
-    const mapContainer = document.getElementById('map');
-
     const MAPBOXGL = window.mapboxgl;
-
-    const popup = new MAPBOXGL.Popup({ offset: [0, -15] })
 
     MAPBOXGL.accessToken = process.env.REACT_APP_MAPBOX_API_KEY;
 
-    const map = new MAPBOXGL.Map({
-      container: mapContainer,
-      style: 'mapbox://styles/nickhimmel/cjqrif8l61xis2qn4zemgwtx4',
-      center: [-74.024, 40.71],
-      zoom: 13.3,
-      interactive: false
+    const popup = new MAPBOXGL.Popup({ offset: [-5, -18] })
+
+    const mapDesktop = new MAPBOXGL.Map({
+      container: this.mapContainer,
+      style: this.state.style,
+      interactive: this.state.interactive,
+      center: [-74.023, 40.71],
+      zoom: 13.3
     });
 
     geojson.geojson.features.forEach((marker) => {
@@ -47,7 +48,7 @@ class Map extends Component {
         popup.setLngLat(marker.geometry.coordinates)
           .setHTML('<p>' + marker.properties.title + '</p>')
           .setLngLat(marker.geometry.coordinates)
-          .addTo(map)
+          .addTo(mapDesktop)
       });
 
       el.addEventListener('mouseleave', () => {
@@ -66,14 +67,14 @@ class Map extends Component {
 
       new MAPBOXGL.Marker(el)
         .setLngLat(marker.geometry.coordinates)
-        .addTo(map);
+        .addTo(mapDesktop)
     });
 
   }
 
   render() {
     return (
-      <div id='map' className='map'>
+      <div ref={el => this.mapContainer = el} className='map'>
         <div className='map-credits'>
           <a className='link' href='https://blog.mapbox.com/designing-north-star-c8574e299c94'>Design North Star</a>
         </div>
