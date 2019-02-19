@@ -14,8 +14,7 @@ class Comparison extends Component {
     super(props);
 
     this.state = {
-      uuid: 'e3c8e2d0-c60c-012f-d813-58d385a7bc34',
-      open: true
+      uuid: 'e3c8e2d0-c60c-012f-d813-58d385a7bc34'
     }
   }
 
@@ -25,9 +24,7 @@ class Comparison extends Component {
 
   componentDidUpdate(prevProps) {
     if (this.props.uuid !== prevProps.uuid) {
-      this.setState(state => ({
-        open: true
-      }))
+
     };
   }
 
@@ -51,19 +48,14 @@ class Comparison extends Component {
   }
 
   handleClick = () => {
-    this.setState(state => ({
-      open: false
-    }))
+
   }
 
   render() {
-    const isOpen = this.state.open;
 
     return (
       <div className='comparison'>
-        {isOpen &&
-          (<div>{this.renderComparison()}</div>)
-        }
+        {this.renderComparison()}
       </div>
     );
   }

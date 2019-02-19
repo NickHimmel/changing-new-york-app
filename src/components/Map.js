@@ -10,28 +10,32 @@ class Map extends Component {
 
     this.state = {
       id: 10,
-      style: 'mapbox://styles/nickhimmel/cjqrif8l61xis2qn4zemgwtx4',
-      interactive: false,
+      lng: 74.011
     }
   }
+
 
   handleClick = (uuid) => {
     this.props.fetchPhotos(uuid);
   }
 
   componentDidMount() {
+
     const MAPBOXGL = window.mapboxgl;
 
     MAPBOXGL.accessToken = process.env.REACT_APP_MAPBOX_API_KEY;
 
     const popup = new MAPBOXGL.Popup({ offset: [-5, -18] })
 
-    const mapDesktop = new MAPBOXGL.Map({
+    const lng = ((window.innerWidth / 100) * .001) + 74.011;
+    const lat = 40.738 - ((window.innerWidth / 100) * .003);
+
+    const map = new MAPBOXGL.Map({
       container: this.mapContainer,
-      style: this.state.style,
-      interactive: this.state.interactive,
-      center: [-74.023, 40.71],
-      zoom: 13.3
+      style: 'mapbox://styles/nickhimmel/cjqrif8l61xis2qn4zemgwtx4',
+      interactive: false,
+      center: [-lng, lat],
+      zoom: 13.25
     });
 
     geojson.geojson.features.forEach((marker) => {
@@ -48,7 +52,7 @@ class Map extends Component {
         popup.setLngLat(marker.geometry.coordinates)
           .setHTML('<p>' + marker.properties.title + '</p>')
           .setLngLat(marker.geometry.coordinates)
-          .addTo(mapDesktop)
+          .addTo(map)
       });
 
       el.addEventListener('mouseleave', () => {
@@ -67,9 +71,14 @@ class Map extends Component {
 
       new MAPBOXGL.Marker(el)
         .setLngLat(marker.geometry.coordinates)
-        .addTo(mapDesktop)
+        .addTo(map)
     });
 
+    window.onresize = (event) => {
+      const newLng = ((window.innerWidth / 100) * .001) + 74.011;
+      const newLat = 40.738 - ((window.innerWidth / 100) * .003);
+      map.setCenter([-newLng, newLat]);
+    };
   }
 
   render() {
