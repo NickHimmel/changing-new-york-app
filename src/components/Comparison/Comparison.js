@@ -19,23 +19,21 @@ class Comparison extends Component {
   }
 
   componentDidMount() {
-    this.props.fetchPhotos(this.state.uuid);
-  }
-
-  componentDidUpdate(prevProps) {
-    if (this.props.uuid !== prevProps.uuid) {
-
-    };
+    if (window.innerWidth > 760) this.props.fetchPhotos(this.state.uuid);
   }
 
   renderComparison = () => {
-    if (this.props.isFetching || this.props.isFetching === undefined) {
+    if (this.props.isFetching === undefined) {
+      return (
+        null
+      );
+  } else if (this.props.isFetching) {
       return (
         <Loading />
       );
     }
     return (
-      <div className='comparison__inner'>
+      <div id="comparison-window" className='comparison__inner'>
         <Button onClick={this.handleClick}/>
         <Photo data={this.props.then_photo}/>
         <Caption data={this.props.then_photo}/>
@@ -48,7 +46,8 @@ class Comparison extends Component {
   }
 
   handleClick = () => {
-
+    const modal = document.getElementById("comparison-window");
+    modal.classList.add("is-closed");
   }
 
   render() {
@@ -73,7 +72,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = dispatch => bindActionCreators (
   {
-    fetchPhotos
+      fetchPhotos
   },
   dispatch,
 )

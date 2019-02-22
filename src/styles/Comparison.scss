@@ -3,6 +3,10 @@
   margin-bottom: 50px;
   min-height: 2000px;
 
+  .is-closed {
+      display: none;
+  }
+
   &__inner {
     background-color: $white;
     padding: 50px 25px;
@@ -170,7 +174,6 @@
     grid-column: 2 / -2;
 
     &__inner {
-
 
       .footnotes {
       display: block;
