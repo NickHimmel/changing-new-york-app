@@ -12,6 +12,10 @@
     z-index: 2;
   }
 
+  .mapboxgl-popup {
+    z-index: 15;
+  }
+
   .mapboxgl-popup-content {
     background-color: #000;
     border-radius: 0;
@@ -34,6 +38,10 @@
 
   .mapboxgl-popup-anchor-bottom .mapboxgl-popup-tip {
     border-top-color: #000;
+  }
+
+  .mapboxgl-popup-anchor-left .mapboxgl-popup-tip {
+    border-right-color: #000;
   }
 
   .marker {

@@ -9,11 +9,24 @@ class Map extends Component {
     super (props);
 
     this.state = {
-      id: 10,
-      lng: 74.011
+      id: 10
     }
   }
 
+  setCoord = () => {
+    var setLng = 74.004;
+    var setLat = 40.728;
+    var setZoom = 13.25;
+    if (window.innerWidth > 761) {
+      setLng = ((window.innerWidth / 100) * .001) + 74.011;
+      setLat = 40.738 - ((window.innerWidth / 100) * .003);
+    } else if (window.innerWidth > 400) {
+      setLat = 40.719 - ((window.innerWidth / 100) * .004);
+    } else if (window.innerWidth < 400) {
+      setZoom = 12.75;
+    }
+    return [setLng, setLat, setZoom];
+  }
 
   handleClick = (uuid) => {
     this.props.fetchPhotos(uuid);
@@ -27,15 +40,14 @@ class Map extends Component {
 
     const popup = new MAPBOXGL.Popup({ offset: [-5, -18] })
 
-    const lng = ((window.innerWidth / 100) * .001) + 74.011;
-    const lat = 40.738 - ((window.innerWidth / 100) * .003);
+    const coord = this.setCoord();
 
     const map = new MAPBOXGL.Map({
       container: this.mapContainer,
       style: 'mapbox://styles/nickhimmel/cjqrif8l61xis2qn4zemgwtx4',
       interactive: false,
-      center: [-lng, lat],
-      zoom: 13.25
+      center: [-coord[0], coord[1]],
+      zoom: coord[2]
     });
 
     geojson.geojson.features.forEach((marker) => {
@@ -66,7 +78,7 @@ class Map extends Component {
           active.removeAttribute("id");
 
         el.setAttribute("id", "active");
-        this.handleClick(marker.properties.UUID)
+        this.handleClick(marker.properties.UUID);
       });
 
       new MAPBOXGL.Marker(el)
@@ -75,9 +87,8 @@ class Map extends Component {
     });
 
     window.onresize = (event) => {
-      const newLng = ((window.innerWidth / 100) * .001) + 74.011;
-      const newLat = 40.738 - ((window.innerWidth / 100) * .003);
-      map.setCenter([-newLng, newLat]);
+      const newCoord = this.setCoord();
+      map.setCenter([-newCoord[0], newCoord[1]]);
     };
   }
 
