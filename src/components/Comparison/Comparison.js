@@ -9,36 +9,31 @@ import Caption from './Caption.js';
 import Text from './Text.js';
 import Footnotes from './Footnotes.js';
 
-class Comparisons extends Component {
+class Comparison extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      uuid: 'e3c8e2d0-c60c-012f-d813-58d385a7bc34',
-      open: true
+      uuid: 'e3c8e2d0-c60c-012f-d813-58d385a7bc34'
     }
   }
 
   componentDidMount() {
-    this.props.fetchPhotos(this.state.uuid);
+    if (window.innerWidth > 760) this.props.fetchPhotos(this.state.uuid);
   }
 
-  componentDidUpdate(prevProps) {
-    if (this.props.uuid !== prevProps.uuid) {
-      this.setState(state => ({
-        open: true
-      }))
-    };
-  }
-
-  renderComparisons = () => {
-    if (this.props.isFetching || this.props.isFetching === undefined) {
+  renderComparison = () => {
+    if (this.props.isFetching === undefined) {
+      return (
+        null
+      );
+  } else if (this.props.isFetching) {
       return (
         <Loading />
       );
     }
     return (
-      <div className="comparisons__inner">
+      <div id="comparison-window" className='comparison__inner'>
         <Button onClick={this.handleClick}/>
         <Photo data={this.props.then_photo}/>
         <Caption data={this.props.then_photo}/>
@@ -51,20 +46,15 @@ class Comparisons extends Component {
   }
 
   handleClick = () => {
-    document.getElementById("active").removeAttribute("id");
-    this.setState(state => ({
-      open: false
-    }))
+    const modal = document.getElementById("comparison-window");
+    modal.classList.add("is-closed");
   }
 
   render() {
-    const isOpen = this.state.open;
 
     return (
-      <div className="comparisons">
-        {isOpen &&
-          this.renderComparisons()
-        }
+      <div className='comparison'>
+        {this.renderComparison()}
       </div>
     );
   }
@@ -82,7 +72,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = dispatch => bindActionCreators (
   {
-    fetchPhotos
+      fetchPhotos
   },
   dispatch,
 )
@@ -90,4 +80,4 @@ const mapDispatchToProps = dispatch => bindActionCreators (
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Comparisons);
+)(Comparison);

@@ -2,16 +2,10 @@
 @import './styles/Map.scss';
 @import './styles/Intro.scss';
 @import './styles/Loading.scss';
-@import './styles/Comparisons.scss';
+@import './styles/Comparison.scss';
 
 body {
   box-sizing: border-box;
-}
-
-#active {
-  background-color: #db4839;
-  width: 20px;
-  height: 20px;
 }
 
 .app {
