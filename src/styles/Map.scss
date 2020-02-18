@@ -3,6 +3,12 @@
   position: absolute;
   width: 100%;
 
+  #active {
+    background-color: #db4839;
+    width: 20px;
+    height: 20px;
+  }
+
   .map-credits {
     background-color: #fff;
     right: 1%;
