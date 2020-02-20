@@ -67,10 +67,10 @@
       h3 {
         color: $grey;
         display: inline;
-        font-family: $font-sans-serif;
+        font-family: $font-small-caps;
         font-size: 12px;
         font-weight: 700;
-        text-transform: uppercase;
+        text-transform: lowercase;
 
         .date {
           font-weight: 400;
@@ -83,6 +83,7 @@
       h2 {
         font-family: $font-serif;
         font-weight: 600;
+        letter-spacing: 1px;
         margin: 25px 0;
         text-align: center;
         text-transform: uppercase;
