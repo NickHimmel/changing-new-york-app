@@ -17,11 +17,23 @@ class Map extends Component {
     var setLng = 74.004;
     var setLat = 40.728;
     var setZoom = 13.25;
-    if (window.innerWidth > 761) {
+    if (window.innerWidth > 2000) {
       setLng = ((window.innerWidth / 100) * .001) + 74.011;
-      setLat = 40.738 - ((window.innerWidth / 100) * .003);
+      setLat = 40.760 - ((window.innerWidth / 100) * .003);
+    } else if (window.innerWidth > 1500) {
+      setLng = ((window.innerWidth / 100) * .001) + 74.011;
+      setLat = 40.749 - ((window.innerWidth / 100) * .003);
+    } else if (window.innerWidth > 900) {
+      setLng = ((window.innerWidth / 100) * .001) + 74.011;
+      setLat = 40.744 - ((window.innerWidth / 100) * .003);
+    } else if (window.innerWidth > 762) {
+      setLng = ((window.innerWidth / 100) * .001) + 74.011;
+      setLat = 40.748 - ((window.innerWidth / 100) * .003);
+    } else if (window.innerWidth > 761) {
+      setLng = ((window.innerWidth / 100) * .001) + 74.011;
+      setLat = 40.741 - ((window.innerWidth / 100) * .003);
     } else if (window.innerWidth > 400) {
-      setLat = 40.719 - ((window.innerWidth / 100) * .004);
+      setLat = 40.720 - ((window.innerWidth / 100) * .004);
     } else if (window.innerWidth < 400) {
       setZoom = 12.75;
     }
