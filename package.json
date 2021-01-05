@@ -4,7 +4,7 @@
   "private": true,
   "homepage": "https://nickhimmel.github.io/changing-new-york-app",
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "dotenv": "^6.2.0",
     "http-proxy-middleware": "^0.19.1",
     "node-sass": "^4.13.0",
